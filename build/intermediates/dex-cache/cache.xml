@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-ea696d0825f312a0e87e3cdde6ec14ab5278203b.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-449b62547dfae61a7a39d25f4dd101582f4d7d90.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-39a0f249bcfb219373773724e2ffbb3cebd91d63.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.19.0/e3f11020c2c812112803d252d1392872d3f619c8/google-http-client-android-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3f11020c2c812112803d252d1392872d3f619c8">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-http-client-android-1.19.0-361964d666f273e031c706753caf3742ed20f83b.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-a51276a9c6306aa2230b772721b44ca9a1ae9a34.jar" />
+    </item>
+    <item
+        jar="/home/pedro/android-sdks/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-48b5dcfb75075d9e574d4ff522814a768383d117.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-e6875771381ef73b2b73b49094c54eff1c559097.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-6209c974200f75ae2d4c455eb3edaf2034ea0c24.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-e33712a6d62586ea9e9211258d9c299d07be0d6b.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-b96c96957293374b4af4f6141675fa843797d3f0.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/13.0/381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7/guava-jdk5-13.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/guava-jdk5-13.0-9eaca223493333c16e43d2100ffc5d867d861ef9.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-33f28dfaf0643b045292271e87b211351eb86aff.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-1d38e34a90445ed61e2ecaa6faf30a89f0ee3652.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-67568684ba91b4fa61b90444a0939a3bf26945f3.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-778dd79ae0a82a7e413777edbb22ee9cb7178ea4.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-8cfd6be3cc50b8de791ac533ae35872c8b2e8fdd.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/jackson-core-2.1.3-fe4429867fd9047a3060cbee8276f1dde17dc212.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.19.0/ba2aafb867f6af469f936ae76426cf0a280094bd/google-api-client-android-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba2aafb867f6af469f936ae76426cf0a280094bd">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-api-client-android-1.19.0-f3a3227f5d1228ab3b5dce5756685cda605a3e68.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.19.0/6a21277d9bebe267b7ddee028b241eebc756c040/google-api-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6a21277d9bebe267b7ddee028b241eebc756c040">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-api-client-1.19.0-b3754b726f015a3952d88e6252aee5c03c3d67aa.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-8d4f59fc8056935dc73811aabf36c1a22117954d.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-cd07adf10c9661a5fec1c0a73d9712248bba7062.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-2b182f7f394ad7212c4f2039fb592f8112faebdd.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-407b4a9d544bcbcde6f9ae38a73b812c9ee717a4.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/backend/build/libs/backend-android-endpoints.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8f9c9058b4a398e15fd8650006dc84be5b9cd6b3">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/backend-android-endpoints-fc372d3bbd639b86927c3c35134ab8eb61e4811a.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-4cef4282b4d223e117be843eb643961f341bfef8.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-b07b2c53211b789c66e4e669a400583bdacb8c08.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.19.0/cdca49ad0977c040f603478aa2e16b2775c8fec6/google-http-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="cdca49ad0977c040f603478aa2e16b2775c8fec6">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-http-client-1.19.0-008ee93687c2eabfb3251a1e9f551276ebf80c46.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-e6e0ce563f691d014394cd141fd2da8122b631a1.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.19.0/81dbf9795d387d5e80e55346582d5f2fb81a42eb/google-http-client-jackson2-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81dbf9795d387d5e80e55346582d5f2fb81a42eb">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-http-client-jackson2-1.19.0-9a1b43570c370a26c2d31c80cbc5dc1abb91ba66.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-e99d8ffddbef487fd0219eae579267751fd03140.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.19.0/d473a8962e14a707a3716637e4898bb2dd9643f2/google-oauth-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d473a8962e14a707a3716637e4898bb2dd9643f2">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/google-oauth-client-1.19.0-17f67c97600a69c26182d837cf7390d63dfd87aa.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-cbd60e729424fafb7ef172dc6ee5121b90575d6a.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-391f92d71e5a24f70d835e25c7a58cbe204c4f3c.jar" />
+    </item>
+    <item
+        jar="/home/pedro/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/jsr305-1.3.9-73d8e3a812cd5c94ff3433e18a0fc65257fc21a0.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f7188fc9a524a8f965b5aeab74879036f0431080">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-f1ee4d60e3113755ab6304bddcde53b5cc7c6891.jar" />
+    </item>
+
+</items>

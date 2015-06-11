@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.example.pedro.endogen.LoginActivity" tools:ignore="MergeRootFrame">
+
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="203dp"
+            android:layout_gravity="center"
+            android:id="@+id/frame_login">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"></FrameLayout>
+        </FrameLayout>
+
+
+</FrameLayout>
+<!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/layout/activity_login.xml -->

@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.pedro.endogen.Fragments.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Edit Profile"
+            android:id="@+id/event_title1"
+            android:layout_gravity="center"
+            android:editable="true"
+            android:elegantTextHeight="false"
+            android:padding="30dp" />
+
+    </LinearLayout>
+</FrameLayout><!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/layout/fragment_profile.xml -->

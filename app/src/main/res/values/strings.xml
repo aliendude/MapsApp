@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Endogen</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="explore_events"></string>
+    <string name="new_event"></string>
+    <string name="joined_events"></string>
+    <string name="chat"></string>
+    <string name="title_activity_select_location_maps">SelectLocationMap</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+
+</resources>
