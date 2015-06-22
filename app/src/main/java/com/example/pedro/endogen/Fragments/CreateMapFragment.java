@@ -11,14 +11,7 @@ import android.view.ViewGroup;
 import com.example.pedro.endogen.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link CreateMapFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link CreateMapFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CreateMapFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

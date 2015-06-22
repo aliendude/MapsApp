@@ -1,8 +1,7 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
-import android.location.Address;
-import android.location.Geocoder;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,8 +21,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
-import java.util.List;
 
 
 public class MapFragment1 extends Fragment {

@@ -22,11 +22,6 @@ import android.widget.ListView;
 import com.example.pedro.endogen.Data.CallBackend;
 import com.example.pedro.endogen.Fragments.*;
 import com.example.pedro.endogen.Interface.TabListener;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends ActionBarActivity
         implements com.example.pedro.endogen.Fragments.LoginFragment.OnFragmentInteractionListener,
@@ -102,6 +97,11 @@ public class MainActivity extends ActionBarActivity
                 .setText(R.string.explore_events)
                 .setIcon(R.drawable.ic_action_new)
                 .setTabListener(new TabListener<CreateMapFragment>(this, "Create", CreateMapFragment.class));
+        bar.addTab(tab);
+        tab = bar.newTab()
+                .setText(R.string.explore_events)
+                .setIcon(R.drawable.ic_action_chat)
+                .setTabListener(new TabListener<ChatFragment>(this, "Chat", ChatFragment.class));
         bar.addTab(tab);
 
         bar.setDisplayHomeAsUpEnabled(true);

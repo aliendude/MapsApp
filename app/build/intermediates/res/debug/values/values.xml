@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <array name="username_colors">
+        <item>@color/username0</item>
+        <item>@color/username1</item>
+        <item>@color/username2</item>
+        <item>@color/username3</item>
+        <item>@color/username4</item>
+        <item>@color/username5</item>
+        <item>@color/username6</item>
+        <item>@color/username7</item>
+        <item>@color/username8</item>
+        <item>@color/username9</item>
+        <item>@color/username10</item>
+        <item>@color/username11</item>
+    </array>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -90,6 +106,20 @@
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="username0">#e21400</color>
+    <color name="username1">#91580f</color>
+    <color name="username10">#a700ff</color>
+    <color name="username11">#d300e7</color>
+    <color name="username2">#f8a700</color>
+    <color name="username3">#f78b00</color>
+    <color name="username4">#58dc00</color>
+    <color name="username5">#287b00</color>
+    <color name="username6">#a8f07a</color>
+    <color name="username7">#4ae8c4</color>
+    <color name="username8">#3b88eb</color>
+    <color name="username9">#3824aa</color>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
@@ -215,6 +245,11 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="spacing">8dp</dimen>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
@@ -230,6 +265,12 @@
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">7095000</integer>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <plurals name="message_participants">
+        <item quantity="one">there\'s %d participant</item>
+        <item quantity="other">there are %d participants</item>
+    </plurals>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -253,7 +294,11 @@
     <string name="accept">Accept</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="action_leave">Leave</string>
+    <string name="action_send">Send</string>
     <string name="action_settings">Settings</string>
+    <string name="action_sign_in">Join</string>
+    <string name="action_sign_in_short">Join</string>
     <string name="app_name">Endogen</string>
     <string name="chat"/>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/res/values/values.xml -->
@@ -317,6 +362,8 @@ available. Please contact the developer for assistance.</string>
     <eat-comment/>
     <string name="drawer_close">close</string>
     <string name="drawer_open">open</string>
+    <string name="error_connect">Failed to connect</string>
+    <string name="error_field_required">This field is required</string>
     <string name="explore_events"/>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/debug/res/values/google_maps_api.xml -->
     <eat-comment/>
@@ -328,12 +375,17 @@ available. Please contact the developer for assistance.</string>
     <string name="hello_world">Hello world!</string>
     <string name="joined_events"/>
     <string name="log_out">Log Out</string>
+    <string name="message_user_joined">%s joined</string>
+    <string name="message_user_left">%s left</string>
+    <string name="message_welcome">Welcome</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Send</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="new_event"/>
+    <string name="prompt_message">Message</string>
+    <string name="prompt_username">What\'s your nickname?</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
@@ -342,6 +394,7 @@ available. Please contact the developer for assistance.</string>
     <eat-comment/>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_select_location_maps">SelectLocationMap</string>
+    <string name="user_action_typing">is typing</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>

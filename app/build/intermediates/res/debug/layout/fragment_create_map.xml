@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.pedro.endogen.Fragments.CreateMapFragment">
 
 
@@ -78,7 +78,7 @@
             android:text="Select location"
             android:id="@+id/button"
             android:layout_gravity="center_horizontal"
-            android:onClick="onButtonSelectLocationPressed" />
+            android:onClick="onButtonCentralPressed" />
 
         <TextView
             android:layout_width="wrap_content"
