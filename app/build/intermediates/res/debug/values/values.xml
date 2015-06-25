@@ -394,6 +394,7 @@ available. Please contact the developer for assistance.</string>
     <eat-comment/>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_select_location_maps">SelectLocationMap</string>
+    <string name="title_activity_select_map">SelectMapActivity</string>
     <string name="user_action_typing">is typing</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_strings.xml -->
     <eat-comment/>

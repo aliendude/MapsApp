@@ -1,5 +1,7 @@
 package com.example.pedro.endogen;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -39,10 +41,22 @@ public class MainActivity extends ActionBarActivity
 
     public void onButtonCentralPressed(View v)
     {
-        new CallBackend().execute(new Pair<Context, String>(this, "Pedrooo"));
+        //Log.e("pedro","pedroooo1111115");
+        //new CallBackend().execute(new Pair<Context, String>(this, "Pedrooo"));
+        Intent intent = new Intent(MainActivity.this, SelectMapActivity.class);
+        startActivityForResult(intent, 0);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+//        try {
+//            String lat = data.getStringExtra("lat");
+//            String lng = data.getStringExtra("lng");
+//            Log.e("pedroo", lat + " " + lng);
+//        }catch(Exception e){}
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

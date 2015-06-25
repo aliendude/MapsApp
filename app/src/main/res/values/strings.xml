@@ -32,4 +32,5 @@
         <item quantity="one">there\'s %d participant</item>
         <item quantity="other">there are %d participants</item>
     </plurals>
+    <string name="title_activity_select_map">SelectMapActivity</string>
 </resources>
