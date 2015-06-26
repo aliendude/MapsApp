@@ -38,7 +38,7 @@
         <activity
             android:name="com.example.pedro.endogen.ChatLoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat"
+            android:theme="@style/Theme.AppCompat.Light"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
 

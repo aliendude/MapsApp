@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.pedro.endogen.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -126,9 +127,10 @@ public class SelectMapFragment extends Fragment {
                         public void onClick(View view) {
 
                             Intent intent = new Intent();
-                            intent.putExtra("lat", latLng.latitude);
-                            intent.putExtra("lng", latLng.longitude);
-                            Log.e("pedroo","lat "+latLng.latitude+" lng "+ latLng.longitude);
+                            intent.putExtra("lat", latLng.latitude+"");
+                            intent.putExtra("lng", latLng.longitude+"");
+
+                            //Log.e("pedroo","lat "+latLng.latitude+" lng "+ latLng.longitude);
                             getActivity().setResult(getActivity().RESULT_OK, intent);
                             getActivity().finish();
 

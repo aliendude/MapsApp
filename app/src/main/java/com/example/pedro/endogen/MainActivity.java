@@ -20,6 +20,7 @@ import android.util.Pair;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pedro.endogen.Data.CallBackend;
 import com.example.pedro.endogen.Fragments.*;
@@ -50,11 +51,15 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        try {
-//            String lat = data.getStringExtra("lat");
-//            String lng = data.getStringExtra("lng");
-//            Log.e("pedroo", lat + " " + lng);
-//        }catch(Exception e){}
+        try {
+            String lat = data.getStringExtra("lat");
+            String lng = data.getStringExtra("lng");
+            Log.e("pedroo", lat + " " + lng);
+            TextView labelLat=(TextView)findViewById(R.id.labelLat);
+            labelLat.setText(lat);
+            TextView labelLng=(TextView)findViewById(R.id.labelLng);
+            labelLng.setText(lng);
+        }catch(Exception e){}
 
     }
     @Override
