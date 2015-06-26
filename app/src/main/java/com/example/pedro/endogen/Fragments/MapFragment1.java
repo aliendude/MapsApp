@@ -2,6 +2,9 @@ package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pedro.endogen.R;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 
@@ -24,7 +30,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 
-public class MapFragment1 extends Fragment {
+public class MapFragment1 extends Fragment{
 
     MapView mMapView;
     private GoogleMap googleMap;
@@ -36,6 +42,10 @@ public class MapFragment1 extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private Location mLastLocation;
+    private GoogleApiClient mGoogleApiClient;
+    private double mLongitude;
+    private double mLatitude;
 
     public static MapFragment1 newInstance(String param1, String param2) {
         MapFragment1 fragment = new MapFragment1();
@@ -56,10 +66,6 @@ public class MapFragment1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     private static View view;
@@ -163,6 +169,20 @@ public class MapFragment1 extends Fragment {
             // adding marker
             googleMap.addMarker(marker);
 
+            //adding user's location marker
+           try {
+                   getLocation();
+                   // user's location:
+                   marker = new MarkerOptions().position(new LatLng(mLatitude,mLongitude)).title("You");
+                   // Changing marker icon
+                   marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+                   // adding marker
+                   googleMap.addMarker(marker);
+
+           }catch (Exception e){
+               Log.e("pedro","could not get your location");
+           }
+
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(38.858641, -104.918241)).zoom(16).build();
             googleMap.animateCamera(CameraUpdateFactory
@@ -197,16 +217,23 @@ public class MapFragment1 extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    private void getLocation() {
+        // Get the location manager
+        LocationManager locationManager = (LocationManager)
+                getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String bestProvider = locationManager.getBestProvider(criteria, false);
+        Location location = locationManager.getLastKnownLocation(bestProvider);
+        try {
+            mLatitude = location.getLatitude();
+            mLongitude = location.getLongitude();
+        } catch (NullPointerException e) {
+            mLatitude = -1.0;
+            mLongitude = -1.0;
+        }
+    }
+
+
     public interface OnFragmentInteractionListener {
         public void onFragmentInteraction(Uri uri);
     }
