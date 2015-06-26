@@ -82,27 +82,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="lat: "
                 android:id="@+id/labelLat"
                 android:enabled="true"
-                android:editable="true" />
+                android:editable="false" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="lon:"
                 android:id="@+id/labelLng"
                 android:enabled="true"
-                android:editable="true" />
+                android:editable="false" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select location"
-                android:id="@+id/button"
-                android:layout_gravity="center_horizontal"
-                android:onClick="onButtonCentralPressed" />
+                android:id="@+id/buttonSelectLocation"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,20 +131,12 @@
                 android:id="@+id/editText5"
                 android:layout_gravity="center_horizontal" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Invited People"
-                android:id="@+id/textView9"
-                android:padding="20dp" />
-
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Create"
-                android:id="@+id/create_map_button"/>
+                android:id="@+id/buttonCreateMap" />
         </LinearLayout>
     </ScrollView>
 

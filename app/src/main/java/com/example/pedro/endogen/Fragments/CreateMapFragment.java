@@ -1,24 +1,31 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.pedro.endogen.Data.CallBackend;
+import com.example.pedro.endogen.MainActivity;
 import com.example.pedro.endogen.R;
-
+import com.example.pedro.endogen.SelectMapActivity;
 
 
 public class CreateMapFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -40,25 +47,72 @@ public class CreateMapFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_create_map, container, false);
+        Button buttonSelectLocation = (Button)view.findViewById(R.id.buttonSelectLocation);
+        buttonSelectLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                onButtonSelectLocationPressed(v);
+            }
+        });
+        Button buttonCreateMap = (Button) view.findViewById(R.id.buttonCreateMap);
+        buttonCreateMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                onButtonCreateMapPressed(v);
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_map, container, false);
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        try {
+            String lat = data.getStringExtra("lat");
+            String lng = data.getStringExtra("lng");
+
+            TextView labelLat=(TextView)getActivity().findViewById(R.id.labelLat);
+            labelLat.setText(lat);
+            TextView labelLng=(TextView)getActivity().findViewById(R.id.labelLng);
+            labelLng.setText(lng);
+        }catch(Exception e){}
+
+    }
+    public void onButtonSelectLocationPressed(View v)
+    {
+        Intent intent = new Intent(getActivity(), SelectMapActivity.class);
+        startActivityForResult(intent, 0);
+    }
+    public void onButtonCreateMapPressed(View v)
+    {
+        EditText nameEt= (EditText)getActivity().findViewById(R.id.editText);
+        String name= nameEt.getText()+"";
+        EditText startTimeEt= (EditText)getActivity().findViewById(R.id.editText2);
+        String startTime=startTimeEt.getText()+"";
+        EditText endTimeEt= (EditText)getActivity().findViewById(R.id.editText3);
+        String endTime=endTimeEt.getText()+"";
+        TextView labelLat=(TextView)getActivity().findViewById(R.id.labelLat);
+        String latlng=labelLat.getText()+"";
+        TextView labelLng=(TextView)getActivity().findViewById(R.id.labelLng);
+        latlng+=" "+labelLng.getText();
+        EditText nOfParticipantsEt= (EditText)getActivity().findViewById(R.id.editText4);
+        String nOfParticipants=nOfParticipantsEt.getText()+"";
+        EditText descEt= (EditText)getActivity().findViewById(R.id.editText5  );
+        String desc=descEt.getText()+"";
+
+        String[] callbackend= new String[2];
+        callbackend[0]="createMapMarker";
+        callbackend[1]=name+" "+startTime+" "+endTime+" "+latlng+" "+nOfParticipants+" "+desc;
+        new CallBackend().execute(new Pair<Context, String[]>(getActivity(), callbackend));
     }
 
     @Override

@@ -19,12 +19,16 @@ import android.view.View;
 import android.util.Pair;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.pedro.endogen.Data.CallBackend;
 import com.example.pedro.endogen.Fragments.*;
 import com.example.pedro.endogen.Interface.TabListener;
+
+
+
 
 public class MainActivity extends ActionBarActivity
         implements com.example.pedro.endogen.Fragments.LoginFragment.OnFragmentInteractionListener,
@@ -34,34 +38,13 @@ public class MainActivity extends ActionBarActivity
         ChatFragment.OnFragmentInteractionListener
 {
 
-    private String[] listElements={"View Events Around","Create Event","Profile","Settings","About"};
+    private String[] listElements={"Profile","Settings","About"};
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
 
 
-    public void onButtonCentralPressed(View v)
-    {
-        //Log.e("pedro","pedroooo1111115");
-        //new CallBackend().execute(new Pair<Context, String>(this, "Pedrooo"));
-        Intent intent = new Intent(MainActivity.this, SelectMapActivity.class);
-        startActivityForResult(intent, 0);
-    }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        try {
-            String lat = data.getStringExtra("lat");
-            String lng = data.getStringExtra("lng");
-            Log.e("pedroo", lat + " " + lng);
-            TextView labelLat=(TextView)findViewById(R.id.labelLat);
-            labelLat.setText(lat);
-            TextView labelLng=(TextView)findViewById(R.id.labelLng);
-            labelLng.setText(lng);
-        }catch(Exception e){}
-
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

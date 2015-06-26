@@ -124,6 +124,7 @@
     <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-nearby-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.4" level="project" />
+    <orderEntry type="library" name="appengine-api-1.0-sdk-1.9.14" level="project" />
   </component>
 </module>
 

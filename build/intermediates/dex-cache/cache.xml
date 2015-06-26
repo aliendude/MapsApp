@@ -114,18 +114,18 @@
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-67568684ba91b4fa61b90444a0939a3bf26945f3.jar" />
     </item>
     <item
-        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-778dd79ae0a82a7e413777edbb22ee9cb7178ea4.jar" />
-    </item>
-    <item
         jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c6d79137693d494dee16372d3921f919eb724ced">
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-0cb154735764ca8cb8d350978c6917486a331802.jar" />
+    </item>
+    <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-778dd79ae0a82a7e413777edbb22ee9cb7178ea4.jar" />
     </item>
     <item
         jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
@@ -187,7 +187,7 @@
         jar="/home/pedro/AndroidStudioProjects/Endogen/backend/build/libs/backend-android-endpoints.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="bfb26fd52d393de624dc25db973c2062b1bf73fe">
+        sha1="2cfd3f2f86d0459da4383474d258f7b51fc813ac">
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/backend-android-endpoints-fc372d3bbd639b86927c3c35134ab8eb61e4811a.jar" />
     </item>
     <item

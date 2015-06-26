@@ -1942,6 +1942,8 @@ containing a value of this type.
         public static final int bottom=0x7f0b0039;
         public static final int box_count=0x7f0b0036;
         public static final int button=0x7f0b0037;
+        public static final int buttonCreateMap=0x7f0b0089;
+        public static final int buttonSelectLocation=0x7f0b0084;
         public static final int buyButton=0x7f0b0029;
         public static final int buy_now=0x7f0b002d;
         public static final int buy_with_google=0x7f0b002e;
@@ -1957,7 +1959,6 @@ containing a value of this type.
         public static final int com_facebook_tooltip_bubble_view_text_body=0x7f0b0073;
         public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f0b0071;
         public static final int container=0x7f0b0068;
-        public static final int create_map_button=0x7f0b0089;
         public static final int decor_content_parent=0x7f0b0055;
         public static final int default_activity_button=0x7f0b004a;
         public static final int dialog=0x7f0b0021;
@@ -1969,8 +1970,8 @@ containing a value of this type.
         public static final int editText=0x7f0b007c;
         public static final int editText2=0x7f0b007e;
         public static final int editText3=0x7f0b0080;
-        public static final int editText4=0x7f0b0085;
-        public static final int editText5=0x7f0b0087;
+        public static final int editText4=0x7f0b0086;
+        public static final int editText5=0x7f0b0088;
         public static final int edit_query=0x7f0b0059;
         public static final int end=0x7f0b0015;
         public static final int event_title1=0x7f0b008c;
@@ -2051,10 +2052,9 @@ containing a value of this type.
         public static final int textView3=0x7f0b007b;
         public static final int textView4=0x7f0b007d;
         public static final int textView5=0x7f0b007f;
-        public static final int textView6=0x7f0b0084;
-        public static final int textView7=0x7f0b0086;
+        public static final int textView6=0x7f0b0085;
+        public static final int textView7=0x7f0b0087;
         public static final int textView8=0x7f0b0081;
-        public static final int textView9=0x7f0b0088;
         public static final int title=0x7f0b004d;
         public static final int top=0x7f0b003b;
         public static final int unknown=0x7f0b0035;
