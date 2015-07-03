@@ -2,12 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <com.google.android.gms.maps.MapView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <com.google.android.gms.maps.MapView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to my location"
+            android:id="@+id/button_go_to_my_location"
+            android:layout_gravity="center_horizontal|bottom" />
+    </FrameLayout>
 
 </RelativeLayout>

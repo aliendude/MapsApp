@@ -1916,7 +1916,7 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020078;
     }
     public static final class id {
-        public static final int action=0x7f0b008e;
+        public static final int action=0x7f0b008f;
         public static final int action_bar=0x7f0b0057;
         public static final int action_bar_activity_content=0x7f0b0000;
         public static final int action_bar_container=0x7f0b0056;
@@ -1925,13 +1925,13 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f0b0045;
         public static final int action_bar_title=0x7f0b0044;
         public static final int action_context_bar=0x7f0b0058;
-        public static final int action_leave=0x7f0b0092;
+        public static final int action_leave=0x7f0b0093;
         public static final int action_menu_divider=0x7f0b0002;
         public static final int action_menu_presenter=0x7f0b0003;
         public static final int action_mode_bar=0x7f0b0054;
         public static final int action_mode_bar_stub=0x7f0b0053;
         public static final int action_mode_close_button=0x7f0b0046;
-        public static final int action_settings=0x7f0b0093;
+        public static final int action_settings=0x7f0b0094;
         public static final int activity_chooser_view_content=0x7f0b0047;
         public static final int adjust_height=0x7f0b0017;
         public static final int adjust_width=0x7f0b0018;
@@ -1944,6 +1944,7 @@ containing a value of this type.
         public static final int button=0x7f0b0037;
         public static final int buttonCreateMap=0x7f0b0089;
         public static final int buttonSelectLocation=0x7f0b0084;
+        public static final int button_go_to_my_location=0x7f0b008c;
         public static final int buyButton=0x7f0b0029;
         public static final int buy_now=0x7f0b002d;
         public static final int buy_with_google=0x7f0b002e;
@@ -1974,7 +1975,7 @@ containing a value of this type.
         public static final int editText5=0x7f0b0088;
         public static final int edit_query=0x7f0b0059;
         public static final int end=0x7f0b0015;
-        public static final int event_title1=0x7f0b008c;
+        public static final int event_title1=0x7f0b008d;
         public static final int expand_activities_button=0x7f0b0048;
         public static final int expanded_menu=0x7f0b004e;
         public static final int frame=0x7f0b006b;
@@ -1996,16 +1997,16 @@ containing a value of this type.
         public static final int left_drawer=0x7f0b006c;
         public static final int listMode=0x7f0b0009;
         public static final int list_item=0x7f0b004b;
-        public static final int log_out=0x7f0b0091;
+        public static final int log_out=0x7f0b0092;
         public static final int login=0x7f0b0066;
         public static final int login_button=0x7f0b008a;
         public static final int main_container=0x7f0b006d;
         public static final int mapView=0x7f0b008b;
         public static final int match_parent=0x7f0b002b;
-        public static final int message=0x7f0b008f;
+        public static final int message=0x7f0b0090;
         public static final int message_input=0x7f0b0076;
         public static final int messages=0x7f0b0075;
-        public static final int messenger_send_button=0x7f0b0090;
+        public static final int messenger_send_button=0x7f0b0091;
         public static final int middle=0x7f0b0016;
         public static final int monochrome=0x7f0b0032;
         public static final int never=0x7f0b001f;
@@ -2060,7 +2061,7 @@ containing a value of this type.
         public static final int unknown=0x7f0b0035;
         public static final int up=0x7f0b0008;
         public static final int useLogo=0x7f0b0012;
-        public static final int username=0x7f0b008d;
+        public static final int username=0x7f0b008e;
         public static final int username_input=0x7f0b0065;
         public static final int withText=0x7f0b0020;
         public static final int wrap_content=0x7f0b0023;

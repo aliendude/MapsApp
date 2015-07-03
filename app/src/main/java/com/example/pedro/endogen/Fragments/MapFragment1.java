@@ -2,8 +2,10 @@ package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
 
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +15,9 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 
 import com.example.pedro.endogen.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -99,7 +104,6 @@ public class MapFragment1 extends Fragment{
             //location.getLatitude();
             //location.getLongitude();
 
-
             //7. the mountain man:
             double latitude =38.8592041;
             double longitude = -104.9197969;
@@ -169,31 +173,84 @@ public class MapFragment1 extends Fragment{
             // adding marker
             googleMap.addMarker(marker);
 
-            //adding user's location marker
-           try {
-                   getLocation();
-                   // user's location:
-                   marker = new MarkerOptions().position(new LatLng(mLatitude,mLongitude)).title("You");
-                   // Changing marker icon
-                   marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-                   // adding marker
-                   googleMap.addMarker(marker);
+            //8: 38.858900, -104.919896
+            //9: 38.858921, -104.919778
+            //10: 38.858926, -104.919595
+            //11: 38.858892, -104.919221
+            //12: 38.858860, -104.919160
+            //13: 38.858873, -104.919099
+            //14: 38.858849, -104.918986
+            //15: 38.858858, -104.918863
+            //16: 38.858828, -104.918750
+            //17: 38.858801, -104.918551
+            //18: 38.858717, -104.918326
+            //19: 38.858558, -104.918109
+            //20: 38.858394, -104.917970
+            //21: 38.858184, -104.917823
+            //22: 38.8580379,-104.9178538
+            //23: 38.857911, -104.917739
+            //24: 38.857758, -104.917153
+            //25: 38.857603, -104.916858
+            //26: 38.857566, -104.916708
+            //27: 38.857525, -104.916640
+            //28: 38.857385, -104.916421
+            //29: 38.857358, -104.916310
+            //30: 38.857344, -104.916224
+            //31: 38.857342, -104.916142
+            //32: 38.857257, -104.916036
+            //33: 38.857236, -104.915888
+            //34: 38.857207, -104.915810
+            //35: 38.857171, -104.915652
+            //36; 38.857096, -104.915683
+            //37: 38.857033, -104.915434
+            //38: 38.856996, -104.915329
+            //39: 38.856979, -104.915234
+            //40: 38.856974, -104.915163
+            //41: 38.857349, -104.914473
+            //42: 38.857344, -104.915057
+            //43: 38.857303, -104.915075
+            //44: 38.857323, -104.915191
+            
 
-           }catch (Exception e){
-               Log.e("pedro","could not get your location");
-           }
+            //adding user's location marker
+            try {
+                getLocation();
+                // user's location:
+                marker = new MarkerOptions().position(new LatLng(mLatitude,mLongitude)).title("You");
+                // Changing marker icon
+                marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+                // adding marker
+                googleMap.addMarker(marker);
+
+            }catch (Exception e){
+                Log.e("pedro","could not get your location");
+            }
+
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(38.858641, -104.918241)).zoom(16).build();
             googleMap.animateCamera(CameraUpdateFactory
                     .newCameraPosition(cameraPosition));
+            Button buttonGoToMyLocationPressed = (Button) view.findViewById(R.id.button_go_to_my_location);
+            buttonGoToMyLocationPressed.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    onGoToMyLocationPressed(v);
+                }
+            });
 
         } catch (InflateException e) {
-
+           e.printStackTrace();
         }
         return view;
     }
-
+    public void onGoToMyLocationPressed(View view) {
+        getLocation();
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(new LatLng(mLatitude,mLongitude)).zoom(16).build();
+        googleMap.animateCamera(CameraUpdateFactory
+                .newCameraPosition(cameraPosition));
+    }
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -224,6 +281,19 @@ public class MapFragment1 extends Fragment{
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, false);
         Location location = locationManager.getLastKnownLocation(bestProvider);
+        LocationListener loc_listener = new LocationListener() {
+
+            public void onLocationChanged(Location l) {}
+
+            public void onProviderEnabled(String p) {}
+
+            public void onProviderDisabled(String p) {}
+
+            public void onStatusChanged(String p, int status, Bundle extras) {}
+        };
+        locationManager
+                .requestLocationUpdates(bestProvider, 0, 0, loc_listener);
+        location = locationManager.getLastKnownLocation(bestProvider);
         try {
             mLatitude = location.getLatitude();
             mLongitude = location.getLongitude();

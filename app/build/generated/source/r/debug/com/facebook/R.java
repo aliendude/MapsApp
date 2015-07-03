@@ -103,7 +103,7 @@ public final class R {
 		public static final int inline = 0x7f0b003a;
 		public static final int large = 0x7f0b0042;
 		public static final int left = 0x7f0b003d;
-		public static final int messenger_send_button = 0x7f0b0090;
+		public static final int messenger_send_button = 0x7f0b0091;
 		public static final int never_display = 0x7f0b0041;
 		public static final int normal = 0x7f0b000a;
 		public static final int open_graph = 0x7f0b0033;
