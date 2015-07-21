@@ -48,7 +48,6 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         //start login activity
         //Intent intent = new Intent(MainActivity.this, LoginActivity.class);

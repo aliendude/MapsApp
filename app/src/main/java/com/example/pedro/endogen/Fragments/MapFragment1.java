@@ -135,7 +135,7 @@ public class MapFragment1 extends Fragment{
             googleMap.addMarker(marker);
 
 
-            //3: Fare Bella Gallery/Edge Custom
+            //3: Fare Bella Gallery/Edge Custom Framing
             latitude = 38.8589803;
             longitude = -104.9202603;
             // create marker
@@ -173,44 +173,92 @@ public class MapFragment1 extends Fragment{
             // adding marker
             googleMap.addMarker(marker);
 
-            //8: 38.858900, -104.919896
-            //9: 38.858921, -104.919778
-            //10: 38.858926, -104.919595
-            //11: 38.858892, -104.919221
-            //12: 38.858860, -104.919160
-            //13: 38.858873, -104.919099
-            //14: 38.858849, -104.918986
-            //15: 38.858858, -104.918863
-            //16: 38.858828, -104.918750
-            //17: 38.858801, -104.918551
-            //18: 38.858717, -104.918326
-            //19: 38.858558, -104.918109
+            //8: 38.858900, -104.919896 Hell's Kitchen Pizza | 9 Ruxton Ave | 685-4355 | B1
+            //9: 38.858921, -104.919778 Cotton Club | 1 Ruxton Ave | 685-9234 | B1
+            //10: 38.858926, -104.919595 The Loop | 965 Manitou Ave | 685-9344 | B2
+            //11: 38.858892, -104.919221 Osburn's Gift Shop | 951 Manitou Ave | 685-9614 | B2
+            //12: 38.858860, -104.919160 Russell Design Studio | 949 Manitou Ave | 685-1404 | B2
+            //13: 38.858873, -104.919099 The Eagle Dancer 947 | Manitou Ave | 685-9462 | B2
+            //14: 38.858849, -104.918986 The Leprechaun Shoppe | 943 Manitou Ave | 685-9213 | B2
+            //15: 38.858858, -104.918863 White Bear Traders | 941 Manitou Ave | 685-4600 | B2
+            //16: 38.858828, -104.918750 Mushroom Monday Gifts | 937 Manitou Ave | 685-1142 | B2
+            //17: 38.858801, -104.918551 European Café | 935 Manitou Ave | 685-3556 | B2
+            //18: 38.858717, -104.918326 Gordon's Gold & Silver | 925 Manitou Ave | 640-0246 | B2
+            //19: 38.858558, -104.918109 La Tienda | 921 Manitou Ave | 685-1961 | B3
             //20: 38.858394, -104.917970
-            //21: 38.858184, -104.917823
-            //22: 38.8580379,-104.9178538
-            //23: 38.857911, -104.917739
-            //24: 38.857758, -104.917153
-            //25: 38.857603, -104.916858
-            //26: 38.857566, -104.916708
-            //27: 38.857525, -104.916640
-            //28: 38.857385, -104.916421
-            //29: 38.857358, -104.916310
-            //30: 38.857344, -104.916224
-            //31: 38.857342, -104.916142
-            //32: 38.857257, -104.916036
-            //33: 38.857236, -104.915888
-            //34: 38.857207, -104.915810
-            //35: 38.857171, -104.915652
-            //36; 38.857096, -104.915683
-            //37: 38.857033, -104.915434
-            //38: 38.856996, -104.915329
-            //39: 38.856979, -104.915234
-            //40: 38.856974, -104.915163
-            //41: 38.857349, -104.914473
-            //42: 38.857344, -104.915057
-            //43: 38.857303, -104.915075
-            //44: 38.857323, -104.915191
-            
+            //21: 38.858184, -104.917823 Susie Q's BBQ | 915 Manitou Ave | 282-0206 | B3
+            //22: 38.8580379,-104.9178538 Townhouse Lounge | 907 Manitou Ave | 685-1085 | B3
+            //23: 38.857911, -104.917739 Olde Tyme Photography | 903 Manitou Ave | 685-9718 | B3
+            //24: 38.857758, -104.917153 PJ's Continental Bistro | 819 Manitou Ave | 685-1195 | C3
+            //25: 38.857603, -104.916858 Manitou Outpost | 807 Manitou Ave | 685-5026 | C3
+            //26: 38.857566, -104.916708 Pikes Peak Chocolate | 805 Manitou Ave | 685-9600 | C3
+            //27: 38.857525, -104.916640 La Henna Boheme | 801 Manitou Ave | 636-2626 | C4 (?) Silver Sparrow Beads | 803 Manitou Ave | 685-1226 | C4
+            //28: 38.857385, -104.916421 Mountain Living Studio | 741 Manitou Ave | 685-0225 | C4
+            //29: 38.857358, -104.916310 Red Dog Coffee | 739 Manitou Ave | 634-2626 | C4
+            //30: 38.857344, -104.916224 Lane Mitchell Jewelers | 737 Manitou Ave | 685-2441 | C4
+            //31: 38.857342, -104.916142 Piramide Clothing Company | 735 Manitou Ave | 685-5912 | C4
+            //32: 38.857257, -104.916036 Mona Lisa Fondue Restaurant | 733 Manitou Ave | 685-0277 | C4
+            //33: 38.857236, -104.915888 Green Horse Gallery | 729 Manitou Ave | 685-0636 | C4
+            //34: 38.857207, -104.915810 Spice Of Life | 727 Manitou Ave | 685-5284 | C4
+            //35: 38.857171, -104.915652 Le Grande Accents Boutique| 725 Manitou Ave #1 | 685-5779 | C4
+            //36; 38.857096, -104.915683 Manitou Brewing Company | 725 Manitou Ave #2 | 282-7709 | C4
+            //37: 38.857033, -104.915434 C.K. Comics and Collectibles | 719 Manitou Ave | 344-9045 | C5
+            //38: 38.856996, -104.915329 Swirl Wine Bar | 717 Manitou Ave | 685-2294 | C5
+            //39: 38.856979, -104.915234 Third Eye Art Gallery | 715 Manitou Ave | 310-5733 | C5
+            //40: 38.856974, -104.915163 Homes of Manitou | 713 Manitou Ave | 685-1212 | C5
+            //41: 38.857349, -104.914473 Stage Coach Inn | 702 Manitou Ave | 685-9400 | C5
+            //42: 38.857344, -104.915057 Messages Jayne's Way | 718 1/2 Manitou Ave | 439-1343 | C5
+            //43: 38.857303, -104.915075 Heart of Jerusalem Cafe | 718 Manitou Ave | 685-1315 | C5
+            //44: 38.857323, -104.915191 Pasha Frozen Yogurt & Smoothies | 720 Manitou Ave | 694-9236 | C5
+            //45: 38.857450, -104.915346 Mavi Turkish Arts | 724 Manitou Ave | 229-3790 | B2
+            //46: 38.857423, -104.915444 Christmas in Manitou Gift Shop | 726 Manitou Ave | 685-4290 | C5
+            //47: 38.857488, -104.915473 Gigi's Animal Lovers Gift Shop | 728 Manitou Ave | 685-4772 | C5
+            //48: 38.857519, -104.915528 The Keg Bar & Grill | 730 Manitou Ave | 685-9531 | C5
+            //49: 38.857553, -104.915598 Mountains West T-Shirt Co. | 732 Manitou Ave | 685-9005 | C4
+            //50: 38.857587, -104.915685 734 Manitou Ave | C4
+            //51: 38.857636, -104.915748 The Taos Maos | 736 Manitou Ave | 685-1299 | C4
+            //52: 38.857643, -104.915790 740 Manitou Ave | C4
+            //53: 38.857714, -104.915802 Whickerbill Gifts | 742 Manitou Ave | 685-1540 | C4
+            //54: 38.857729, -104.915839 The Ten Spot |742A Manitou Ave | 685-1545 | C4
+            //55: 38.857741, -104.915888 Stick 'Em Up Decals | 744 Manitou Ave | 385-7788 | C4
+            //56: 38.857742, -104.915979 Glass Blowers of Manitou | 4 Cañon Ave | 685-1555 | C4
+            //57: 38.857780, -104.916061 Twin Beards Embroidery | 8 Cañon Ave | 685-1360 | C4
+            //58: 38.857987, -104.916168 Commonwheel Artists Co-op | 102 Cañon Ave | 685-1008 | B4
+            //59: 38.858068, -104.916235 Rocky Mountain Way Mercantile | 106 Cañon Ave | 685-1314 | B4
+            //60: 38.858119, -104.916254 108 Cañon Ave | B4
+            //61: 38.858188, -104.916288 Good Karma Coffee Lounge & Deli | 110A Cañon Ave | 685-2325 | B4
+            //62: 38.858313, -104.916358 Goldminers Nuts & Candy | 110B Cañon Ave | 685-5302 | B4
+            //63: 38.858362, -104.916421 Manitou Chiropractic & Naturopath | 114 Cañon Ave | 685-1155 | B4
+            //64: 38.858396, -104.916485 Local First Grocer | 116 Cañon Ave | 685-1501 | B4
+            //65: 38.858920, -104.916851 Crystal Wizard | 130 Cañon Ave | 685-1998 | B4
+            //66: 38.859696, -104.917262 The Cliff House / Red Mountain Bar & Grill | 306 Cañon Ave | 685-3000 | A3
+            //67: 38.858526, -104.916870 The Poppy Seed | 123 Cañon Ave | 685-5200 | C3
+            //68: 38.858079, -104.916959 Manitou Jack's | 814 Manitou Ave | 685-5004 | B3
+            //69: 38.858251, -104.917347 Colorado Custard Company | 906 Manitou Ave #100 | 685-5400 | B3
+            //70: 38.858353, -104.917258 Colorado Custom Metals | 906 Manitou Ave #101 | 227-0633 | B3
+            //71: 38.858338, -104.917410 The Manitou Kitchen Shop | 906 Manitou Ave #102 | 685-9900 | B3
+            //72: 38.858431, -104.917324 The Olive Tap | 906 Manitou Ave #103 | 358-9329 | B3
+            //73: 38.858475, -104.917368 906 Manitou Ave #104 | B3
+            //74: 38.858511, -104.917402 Salus | 906 Manitou Ave #105 | 685-1121 | B3
+            //75: 38.858548, -104.917429 Olive Tree Traders | 906 Manitou Ave #106 | 685-1443 | B3
+            //76: 38.858596, -104.917582 Bear Cave Imports | 906 Manitou Ave #107 | 634-5400 | B3
+            //77: 38.858710, -104.917592 Smoking Gift Headquarters | 918 Manitou Ave | 368-7276 | B3
+            //78: 38.858757, -104.917672 La Chemere Gift Shop | 920 Manitou Ave | 685-9992 | B3
+            //79: 38.859037, -104.917579 Penny Arcade & Amusements | 900 Manitou Ave | 685-9815 | B3
+            //80: 38.859026, -104.917268 Wood Studio | 205 Cañon Ave | 685-2414 | B3
+            //81: 38.858843, -104.917791 Royal Tavern | 924 Manitou Ave | 685-1404 | B2
+            //82: 38.858903, -104.917977 Patsy's Chocolate & Gift Shop | 930 Manitou Ave | 685-9437 | B3
+            //83: 38.859226, -104.917611 Mountain High Gallery & Gifts | 11 Arcade | 685-5396 | B3
+            //84: 38.859314, -104.918000 D'Vine Whine | 934 Manitou Ave #108 | 685-10-30 | B3 (?) Darpino Studio Gallery | 934 Maniou Ave #107 | 339-9788 | B3 (?) Loft Expresso | 934 Manitou Ave #105 | 373-0582 | B3 (?) Theo's Toys | 934 Manitou Ave #103 | 247-8126 | B3 (?) 934 Manitou Ave #100 | B3
+            //85: 38.859172, -104.918585 Flying Eagle | 946 Manitou Ave | 685-5221 | B2
+            //86: 38.858119, -104.916254 Santa Fe Springs 948 Manitou Ave | 685-0175 | B2
+            //87: 38.859160, -104.918774 Kinfolks Mountain Shop | 950 Manitou Ave | 418-6180 | B2
+            //88: 38.859189, -104.918853 Southwest Silver Company | 952 Manitou Ave | 685-9197 | B3
+            //89: 38.859206, -104.918924 Sahara Cafe | 954 Manitou Ave | 685-2303 | B2
+            //90: 38.859231, -104.919044 Mountain High Sportswear | 958 Manitou Ave | 645-9861 | B2
+            //91: 38.859242, -104.919198 Ancient Mariner Tavern | 962 Manitou Ave | 685-5503 | B2
+            //92: 38.859275, -104.919316 Marilyn's House of Fine Pizza | 964 Manitou Ave | 685-9104 | B2
+            //93: 38.859306, -104.919385 The Maté Factor | 966 Manitou Ave | 685-3235 | B2
 
             //adding user's location marker
             try {
@@ -240,7 +288,7 @@ public class MapFragment1 extends Fragment{
             });
 
         } catch (InflateException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return view;
     }
