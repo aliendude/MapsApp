@@ -75,13 +75,13 @@ public class MainActivity extends ActionBarActivity
             //** Called when a drawer has settled in a completely closed state. *//*
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle("Endogen");
+                getSupportActionBar().setTitle("Manitou Springs");
             }
 
             //** Called when a drawer has settled in a completely open state. *//*
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Endogen");
+                getSupportActionBar().setTitle("Manitou Springs");
             }
         };
 
