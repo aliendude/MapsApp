@@ -2,6 +2,10 @@ package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -34,11 +38,14 @@ public class SelectMapFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private static View view;
 
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private double mLatitude;
+    private double mLongitude;
 
     public static SelectMapFragment newInstance(String param1, String param2) {
         SelectMapFragment fragment = new SelectMapFragment();
@@ -64,8 +71,34 @@ public class SelectMapFragment extends Fragment {
         }
     }
 
-    private static View view;
+    private void getLocation() {
+        // Get the location manager
+        LocationManager locationManager = (LocationManager)
+                getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String bestProvider = locationManager.getBestProvider(criteria, false);
+        Location location = locationManager.getLastKnownLocation(bestProvider);
+        LocationListener loc_listener = new LocationListener() {
 
+            public void onLocationChanged(Location l) {}
+
+            public void onProviderEnabled(String p) {}
+
+            public void onProviderDisabled(String p) {}
+
+            public void onStatusChanged(String p, int status, Bundle extras) {}
+        };
+        locationManager
+                .requestLocationUpdates(bestProvider, 0, 0, loc_listener);
+        location = locationManager.getLastKnownLocation(bestProvider);
+        try {
+            mLatitude = location.getLatitude();
+            mLongitude = location.getLongitude();
+        } catch (NullPointerException e) {
+            mLatitude = -1.0;
+            mLongitude = -1.0;
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (view != null) {

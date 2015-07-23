@@ -1,12 +1,10 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.pedro.endogen.Data.CallBackend;
-import com.example.pedro.endogen.MainActivity;
+
+import com.example.pedro.endogen.Data.MapMarkerAsyncTask;
 import com.example.pedro.endogen.R;
 import com.example.pedro.endogen.SelectMapActivity;
+import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
 
 
 public class CreateMapFragment extends Fragment {
@@ -109,10 +108,23 @@ public class CreateMapFragment extends Fragment {
         EditText descEt= (EditText)getActivity().findViewById(R.id.editText5  );
         String desc=descEt.getText()+"";
 
-        String[] callbackend= new String[2];
-        callbackend[0]="createMapMarker";
-        callbackend[1]=name+" "+startTime+" "+endTime+" "+latlng+" "+nOfParticipants+" "+desc;
-        new CallBackend().execute(new Pair<Context, String[]>(getActivity(), callbackend));
+        //String[] callbackend= new String[2];
+        //callbackend[0]="createMapMarker";
+        //callbackend[1]=name+" "+startTime+" "+endTime+" "+latlng+" "+nOfParticipants+" "+desc;
+        //new CallBackend().execute(new Pair<Context, String[]>(getActivity(), callbackend));
+
+
+        String[] strArr= new String[2];
+        strArr[0]="createMapMarker";
+        MapMarker m = new MapMarker();
+        m.setName(name);
+        m.setStart(startTime);
+        m.setEnd(endTime);
+        m.setLocation(latlng);
+        m.setNparticipants(nOfParticipants);
+        m.setDescription(desc);
+        MapMarkerAsyncTask callbackend1 = new MapMarkerAsyncTask(getActivity());
+        callbackend1.execute(new Pair<String[],MapMarker>(strArr,m));
     }
 
     @Override

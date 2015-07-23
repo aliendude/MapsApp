@@ -1,7 +1,5 @@
 package com.example.pedro.endogen;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -14,16 +12,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Context;
 import android.view.View;
-import android.util.Pair;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.pedro.endogen.Data.CallBackend;
 import com.example.pedro.endogen.Fragments.*;
 import com.example.pedro.endogen.Interface.TabListener;
 

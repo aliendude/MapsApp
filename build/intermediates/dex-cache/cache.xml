@@ -170,6 +170,13 @@
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/classes-8d4f59fc8056935dc73811aabf36c1a22117954d.jar" />
     </item>
     <item
+        jar="/home/pedro/AndroidStudioProjects/Endogen/backend1/build/libs/backend1-android-endpoints.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="bd9e46c4aa4f2ecba90000eb904b5133c5885311">
+        <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/backend1-android-endpoints-0ea3d816136dbc7bf6bc9c789246fd10f5674a1d.jar" />
+    </item>
+    <item
         jar="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -187,7 +194,7 @@
         jar="/home/pedro/AndroidStudioProjects/Endogen/backend/build/libs/backend-android-endpoints.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="61d2fcead04ac2a2dcd986795f1eb56c0ced0ae1">
+        sha1="c2b42f4f754ed1044a384b16898b99af17f32029">
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/backend-android-endpoints-fc372d3bbd639b86927c3c35134ab8eb61e4811a.jar" />
     </item>
     <item

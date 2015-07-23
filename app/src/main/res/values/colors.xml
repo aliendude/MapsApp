@@ -13,7 +13,8 @@
     <color name="username9">#3824aa</color>
     <color name="username10">#a700ff</color>
     <color name="username11">#d300e7</color>
-
+    <color name="white">#ffffff</color>
+    <color name="wisteria" >#7f005c</color>
     <array name="username_colors">
         <item>@color/username0</item>
         <item>@color/username1</item>
