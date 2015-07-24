@@ -1,5 +1,6 @@
 package com.example.pedro.endogen;
 
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -19,8 +20,20 @@ import android.widget.ListView;
 
 import com.example.pedro.endogen.Fragments.*;
 import com.example.pedro.endogen.Interface.TabListener;
+import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
+import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
+import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarkerCollection;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
-
+import java.io.IOException;
 
 
 public class MainActivity extends ActionBarActivity
@@ -103,7 +116,7 @@ public class MainActivity extends ActionBarActivity
         //bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
         //bar.setIcon(R.drawable.ic_drawer1);
         bar.setHomeButtonEnabled(true);
-
+        new MapMarkerAsyncRetriever().execute();
 
     }
 
@@ -214,6 +227,62 @@ public class MainActivity extends ActionBarActivity
         }
 
 
+    }
+
+
+    private class MapMarkerAsyncRetriever extends AsyncTask<Void, Void, MapMarkerCollection>
+    {
+
+        public MapMarkerAsyncRetriever() {
+
+        }
+        private Mapmarkers mapMarkersService = null;
+        @Override
+        protected MapMarkerCollection doInBackground(Void... params) {
+            if (mapMarkersService == null) {
+                Mapmarkers.Builder builder = new Mapmarkers.Builder(AndroidHttp.newCompatibleTransport(),
+                        new AndroidJsonFactory(), null)
+                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
+                        // otherwise they can be skipped
+                        .setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+                            @Override
+                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
+                                    throws IOException {
+                                abstractGoogleClientRequest.setDisableGZipContent(true);
+                            }
+                        });
+                // end of optional local run code
+
+                mapMarkersService = builder.build();
+            }
+            try {
+                return  mapMarkersService.getMapMarkers().execute();
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final MapMarkerCollection result) {
+            MapView mMapView = (MapView) findViewById(R.id.mapView);
+            GoogleMap googleMap = mMapView.getMap();
+
+
+                for (MapMarker element : result.getItems()) {
+                    double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
+                    double latitude = Double.parseDouble(element.getLocation().split(" ")[0]);
+                    // create marker
+                    MarkerOptions marker = new MarkerOptions().position(new LatLng(latitude, longitude)).title(element.getDescription());
+                    // Changing marker icon
+                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    // adding marker
+                    googleMap.addMarker(marker);
+
+                }
+
+
+        }
     }
 }
 
