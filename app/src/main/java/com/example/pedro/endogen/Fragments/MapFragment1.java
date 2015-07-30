@@ -1191,11 +1191,8 @@ public class MapFragment1 extends Fragment{
         LocationListener loc_listener = new LocationListener() {
 
             public void onLocationChanged(Location l) {}
-
             public void onProviderEnabled(String p) {}
-
             public void onProviderDisabled(String p) {}
-
             public void onStatusChanged(String p, int status, Bundle extras) {}
         };
         locationManager

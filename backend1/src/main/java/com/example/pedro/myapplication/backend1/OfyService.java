@@ -1,6 +1,6 @@
 package com.example.pedro.myapplication.backend1;
 
-import com.example.pedro.myapplication.backend1.Model.RegistrationRecord;
+
 import com.example.pedro.myapplication.backend1.Model.MapMarker;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
@@ -13,7 +13,6 @@ import com.googlecode.objectify.ObjectifyService;
 public class OfyService {
 
     static {
-        ObjectifyService.register(RegistrationRecord.class);
         ObjectifyService.register(MapMarker.class);
     }
 

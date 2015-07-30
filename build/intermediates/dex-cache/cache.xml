@@ -173,7 +173,7 @@
         jar="/home/pedro/AndroidStudioProjects/Endogen/backend1/build/libs/backend1-android-endpoints.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="5315d1e9298bbd1ffe0f4c293de3a0df7fa0839f">
+        sha1="6f08d2a796e1c357918ba467a3a9e3055c20bdbe">
         <dex dex="/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/pre-dexed/debug/backend1-android-endpoints-0ea3d816136dbc7bf6bc9c789246fd10f5674a1d.jar" />
     </item>
     <item

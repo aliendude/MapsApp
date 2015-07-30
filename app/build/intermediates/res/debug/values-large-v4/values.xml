@@ -6,11 +6,43 @@
     <bool name="abc_config_allowActionMenuItemTextWithIcon">true</bool>
     <dimen name="abc_config_prefDialogWidth">440dp</dimen>
     <dimen name="abc_search_view_text_min_width">192dip</dimen>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values-large/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-large-v4/values.xml -->
+    <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">60%</item>
     <item name="dialog_fixed_height_minor" type="dimen">90%</item>
     <item name="dialog_fixed_width_major" type="dimen">60%</item>
     <item name="dialog_fixed_width_minor" type="dimen">90%</item>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values-large/dimens.xml -->
+    <eat-comment/>
+    <dimen name="spacing">4dp</dimen>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-large-v4/values.xml -->
+    <eat-comment/>
     <integer name="abc_max_action_buttons">4</integer>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values-large/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="AppTheme.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-large-v4/values.xml -->
+    <eat-comment/>
     <style name="Base.Theme.AppCompat.DialogWhenLarge" parent="Base.Theme.AppCompat.Dialog.FixedSize"/>
     <style name="Base.Theme.AppCompat.Light.DialogWhenLarge" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize"/>
+    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values-large/styles.xml -->
+    <eat-comment/>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@color/username1</item>
+        <item name="height">60dp</item>
+        <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
+
+    </style>
 </resources>

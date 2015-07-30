@@ -6,7 +6,6 @@ import android.util.Pair;
 import android.widget.Toast;
 
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
-import com.example.pedro.myapplication.backend1.registration.Registration;
 import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -26,7 +25,6 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
     private GoogleCloudMessaging gcm;
     private Context context;
 
-
     public MapMarkerAsyncTask(Context context) {
         this.context = context;
     }
@@ -38,7 +36,8 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
                     new AndroidJsonFactory(), null)
                     // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                     // otherwise they can be skipped
-                    .setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                    //.setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                    .setRootUrl("https://endogen-966.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
@@ -47,7 +46,6 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
                         }
                     });
             // end of optional local run code
-
             mapMarkersService = builder.build();
         }
 
@@ -60,7 +58,6 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
             msg = "Marker created";
             String[] data = params[0].first;
             MapMarker markerToCreate = params[0].second;
-
 
             if (data[0]=="createMapMarker")
             {
@@ -81,7 +78,7 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
     @Override
     protected void onPostExecute(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
-        Logger.getLogger("REGISTRATION").log(Level.INFO, msg);
+        Logger.getLogger("Marker created").log(Level.INFO, msg);
     }
 
 }

@@ -19,7 +19,7 @@ import static com.example.pedro.myapplication.backend1.OfyService.ofy;
 @Api(name = "mapmarkers", version = "v1", namespace = @ApiNamespace(ownerDomain = "backend1.myapplication.pedro.example.com", ownerName = "backend1.myapplication.pedro.example.com", packagePath = ""))
 public class MapMarkerEndPoint {
 
-    private static final Logger log = Logger.getLogger(RegistrationEndpoint.class.getName());
+    private static final Logger log = Logger.getLogger(MapMarkerEndPoint.class.getName());
 
     @ApiMethod(name = "addMarker")
     public void addMarker( MapMarker marker) {

@@ -67,19 +67,6 @@
             android:label="@string/title_activity_select_map"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
-
-        <receiver
-            android:name="com.example.pedro.endogen.Data.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
-                <category android:name="com.example.pedro.endogen" />
-            </intent-filter>
-        </receiver>
-
-        <service android:name="com.example.pedro.endogen.Data.GcmIntentService" />
-
         <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" />

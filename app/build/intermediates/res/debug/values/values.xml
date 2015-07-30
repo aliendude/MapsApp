@@ -216,10 +216,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="com_facebook_likeboxcountview_border_radius">3dp</dimen>
@@ -249,11 +245,6 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/dimens.xml -->
-    <eat-comment/>
-    <dimen name="spacing">8dp</dimen>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
-    <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
@@ -406,18 +397,6 @@ available. Please contact the developer for assistance.</string>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="actionBarStyle">@style/MyActionBar</item>
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
-    </style>
-    <style name="AppTheme.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textSize">26dp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="Base.Animation.AppCompat.DropDownUp" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/abc_grow_fade_in_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/abc_shrink_fade_out_from_bottom</item>
@@ -1331,15 +1310,6 @@ available. Please contact the developer for assistance.</string>
     <style name="MessengerButtonText.White.Small">
     <item name="android:drawableLeft">@drawable/messenger_bubble_small_blue</item>
   </style>
-    <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
-        <item name="background">@color/username10</item>
-        <item name="height">80dp</item>
-        <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
-        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
-
-    </style>
     <!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">

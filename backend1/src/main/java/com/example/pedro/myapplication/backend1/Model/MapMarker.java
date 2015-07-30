@@ -11,67 +11,67 @@ import java.util.Date;
 @Entity
 public class MapMarker {
 
-    @Id
-    private Long key;
+        @Id
+        private Long key;
 
-    private String name;
+        private String name;
 
-    private String start;
+        private String start;
 
-    private String end;
+        private String end;
 
-    private String location;
+        private String location;
 
-    private String nparticipants;
+        private String nparticipants;
 
-    private String description;
+        private String description;
 
-    public String getName() {
-        return name;
-    }
+        public String getName() {
+            return name;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public String getStart() {
-        return start;
-    }
+        public String getStart() {
+            return start;
+        }
 
-    public void setStart(String start) {
-        this.start = start;
-    }
+        public void setStart(String start) {
+            this.start = start;
+        }
 
-    public String getEnd() {
-        return end;
-    }
+        public String getEnd() {
+            return end;
+        }
 
-    public void setEnd(String end) {
-        this.end = end;
-    }
+        public void setEnd(String end) {
+            this.end = end;
+        }
 
-    public String getLocation() {
-        return location;
-    }
+        public String getLocation() {
+            return location;
+        }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-    public String getNparticipants() {
-        return nparticipants;
-    }
+        public String getNparticipants() {
+            return nparticipants;
+        }
+    
+        public void setNparticipants(String nparticipants) {
+            this.nparticipants = nparticipants;
+        }
 
-    public void setNparticipants(String nparticipants) {
-        this.nparticipants = nparticipants;
-    }
+        public String getDescription() {
+            return description;
+        }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+        public void setDescription(String description) {
+            this.description = description;
+        }
 
 }

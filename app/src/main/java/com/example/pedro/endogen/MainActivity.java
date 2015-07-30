@@ -155,7 +155,7 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         if (id == R.id.log_out) {
-           // Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            // Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             //startActivity(intent);
             return true;
@@ -244,7 +244,7 @@ public class MainActivity extends ActionBarActivity
                         new AndroidJsonFactory(), null)
                         // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                         // otherwise they can be skipped
-                        .setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                        .setRootUrl("https://endogen-966.appspot.com/_ah/api/")
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
@@ -266,9 +266,9 @@ public class MainActivity extends ActionBarActivity
         @Override
         protected void onPostExecute(final MapMarkerCollection result) {
             MapView mMapView = (MapView) findViewById(R.id.mapView);
-            GoogleMap googleMap = mMapView.getMap();
+            try{
 
-
+                GoogleMap googleMap = mMapView.getMap();
                 for (MapMarker element : result.getItems()) {
                     double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
                     double latitude = Double.parseDouble(element.getLocation().split(" ")[0]);
@@ -280,10 +280,12 @@ public class MainActivity extends ActionBarActivity
                     googleMap.addMarker(marker);
 
                 }
-
+            } catch(Exception e)
+            {
+                e.printStackTrace();
+            }
 
         }
     }
 }
-
 
