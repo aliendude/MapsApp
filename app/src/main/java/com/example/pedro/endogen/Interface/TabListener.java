@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 
+import com.example.pedro.endogen.R;
+
 /**
  * Created by pedro on 6/05/15.
  */
@@ -33,7 +35,7 @@ public  class TabListener<T extends Fragment> implements ActionBar.TabListener {
         if (mFragment == null) {
             // If not, instantiate and add it to the activity
             mFragment = Fragment.instantiate(mActivity, mClass.getName());
-            ft.add(android.R.id.content, mFragment, mTag);
+            ft.add(R.id.frame, mFragment, mTag);
         } else {
             // If it exists, simply attach it in order to show it
             ft.attach(mFragment);
