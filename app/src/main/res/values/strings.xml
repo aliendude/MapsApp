@@ -33,5 +33,5 @@
         <item quantity="other">there are %d participants</item>
     </plurals>
     <string name="title_activity_select_map">SelectMapActivity</string>
-    <string name="title_activity_user_registration">UserRegistrationActivity</string>
+    <string name="title_activity_user_registration">Register</string>
 </resources>

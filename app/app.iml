@@ -151,5 +151,6 @@
     <orderEntry type="library" exported="" name="backend1-android-endpoints" level="project" />
     <orderEntry type="library" exported="" name="play-services-nearby-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.4" level="project" />
+    <orderEntry type="module" module-name="backend1" />
   </component>
 </module>
