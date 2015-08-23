@@ -77,6 +77,7 @@ public class MapFragment1 extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Log.e("pedro","created");
         if (view != null) {
             ViewGroup parent = (ViewGroup) view.getParent();
             if (parent != null)
@@ -1190,7 +1191,10 @@ public class MapFragment1 extends Fragment{
         Location location = locationManager.getLastKnownLocation(bestProvider);
         LocationListener loc_listener = new LocationListener() {
 
-            public void onLocationChanged(Location l) {}
+            public void onLocationChanged(Location l) {
+
+                Log.e("pedro","location_changed");
+            }
             public void onProviderEnabled(String p) {}
             public void onProviderDisabled(String p) {}
             public void onStatusChanged(String p, int status, Bundle extras) {}

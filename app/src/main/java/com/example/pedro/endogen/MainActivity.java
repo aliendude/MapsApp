@@ -1,5 +1,6 @@
 package com.example.pedro.endogen;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
@@ -56,9 +57,9 @@ public class MainActivity extends ActionBarActivity
 
         super.onCreate(savedInstanceState);
         //start login activity
-        //Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        //startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
         setContentView(R.layout.activity_main);
 
         //create the navigation drawer

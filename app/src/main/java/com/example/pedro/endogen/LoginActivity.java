@@ -1,23 +1,15 @@
 package com.example.pedro.endogen;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Arrays;
 
 public class LoginActivity extends ActionBarActivity
    implements com.example.pedro.endogen.Fragments.LoginFragment.OnFragmentInteractionListener{
@@ -99,5 +91,10 @@ public class LoginActivity extends ActionBarActivity
             View rootView = inflater.inflate(R.layout.fragment_login, container, false);
             return rootView;
         }
+    }
+    public void onSignUpButtonPressed(View v)
+    {
+        Intent intent = new Intent(this, UserRegistrationActivity.class);
+        startActivity(intent);
     }
 }
