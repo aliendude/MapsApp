@@ -11,7 +11,7 @@
     <string name="joined_events"></string>
     <string name="chat"></string>
     <string name="title_activity_select_location_maps">SelectLocationMap</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">Log In</string>
 
     <string name="action_leave">Leave</string>
     <string name="action_send">Send</string>

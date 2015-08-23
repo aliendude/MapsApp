@@ -38,7 +38,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/username_text" />
+                        android:id="@+id/login_username_text" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -57,7 +57,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/password_text" />
+                            android:inputType="textPassword"
+                            android:id="@+id/login_password_text" />
                     </LinearLayout>
 
                     <Button
@@ -65,7 +66,8 @@
                         android:layout_height="wrap_content"
                         android:text="Log in"
                         android:id="@+id/login_button"
-                        android:layout_gravity="center_horizontal" />
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="onLogInButtonPressed" />
 
                     <TextView
                         android:layout_width="wrap_content"

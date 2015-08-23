@@ -1,29 +1,40 @@
 package com.example.pedro.endogen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class LoginActivity extends ActionBarActivity
-   implements com.example.pedro.endogen.Fragments.LoginFragment.OnFragmentInteractionListener{
+import com.example.pedro.myapplication.backend1.users.Users;
+import com.example.pedro.myapplication.backend1.users.model.User;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class LoginActivity extends ActionBarActivity{
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
-
-        ActionBar bar= getSupportActionBar();
-        bar.setTitle("Endogen");
-
     }
 
 
@@ -72,29 +83,94 @@ public class LoginActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onFragmentInteraction(int position) {
+    public User loggedUser;
+    public void onLogInButtonPressed(View v)
+    {
+        EditText editText= (EditText)findViewById(R.id.login_username_text);
+        String username= editText.getText()+"";
+        editText= (EditText)findViewById(R.id.login_password_text);
 
-    }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+        String password= editText.getText()+"";
 
-        public PlaceholderFragment() {
-        }
+        String [] params= new String [2];
+        params[0]=username;
+        params[1]=password;
+        new LoginUserAsyncTask(this).execute(params);
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-            return rootView;
-        }
     }
     public void onSignUpButtonPressed(View v)
     {
         Intent intent = new Intent(this, UserRegistrationActivity.class);
         startActivity(intent);
     }
+
+
+    public class LoginUserAsyncTask extends AsyncTask<String [], Void, User> {
+        private Users usersService = null;
+        private GoogleCloudMessaging gcm;
+        private Context context;
+        public LoginUserAsyncTask(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected User doInBackground(String[]... params) {
+            if (usersService == null) {
+                Users.Builder builder = new Users.Builder(AndroidHttp.newCompatibleTransport(),
+                        new AndroidJsonFactory(), null)
+                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
+                        // otherwise they can be skipped
+                        //.setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                        .setRootUrl(Constants.APPENGINE_URL)
+                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+                            @Override
+                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
+                                    throws IOException {
+                                abstractGoogleClientRequest.setDisableGZipContent(true);
+                            }
+                        });
+                // end of optional local run code
+                usersService = builder.build();
+            }
+
+            if (gcm == null) {
+                gcm = GoogleCloudMessaging.getInstance(context);
+            }
+
+            try {
+                return usersService.logIn(params[0][0],params[0][1]).execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(User usr) {
+
+            String msg;
+            if(usr==null){
+                msg="User not found";
+                Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+            }
+            else{
+                msg="Welcome!";
+                loggedUser=usr;
+                Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+                //Intent intent = new Intent();
+                //intent.pu
+                //setResult(resultcode, intent);
+                finish();
+            }
+
+
+        }
+
+    }
+
+
+
+
 }

@@ -1,7 +1,6 @@
 package com.example.pedro.endogen;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -75,16 +74,16 @@ public class UserRegistrationActivity extends ActionBarActivity {
         value= editText.getText()+"";
         current.setPassword(value);
 
-        new UserAsyncTask(this).execute(current);
+        new CreateUserAsyncTask(this).execute(current);
         finish();
     }
 
 
-    public class UserAsyncTask extends AsyncTask<User, Void, String> {
+    public class CreateUserAsyncTask extends AsyncTask<User, Void, String> {
         private Users usersService = null;
         private GoogleCloudMessaging gcm;
         private Context context;
-        public UserAsyncTask(Context context) {
+        public CreateUserAsyncTask(Context context) {
             this.context = context;
         }
 
@@ -96,7 +95,7 @@ public class UserRegistrationActivity extends ActionBarActivity {
                         // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                         // otherwise they can be skipped
                         //.setRootUrl("http://10.0.3.2:8080/_ah/api/")
-                        .setRootUrl("https://endogen-966.appspot.com/_ah/api/")
+                        .setRootUrl(Constants.APPENGINE_URL)
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)

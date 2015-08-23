@@ -37,8 +37,7 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import java.io.IOException;
 
 
-public class MainActivity extends ActionBarActivity
-        implements com.example.pedro.endogen.Fragments.LoginFragment.OnFragmentInteractionListener,
+public class MainActivity extends ActionBarActivity implements
         MapFragment1.OnFragmentInteractionListener,
         CreateMapFragment.OnFragmentInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
@@ -59,7 +58,7 @@ public class MainActivity extends ActionBarActivity
         //start login activity
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
         setContentView(R.layout.activity_main);
 
         //create the navigation drawer

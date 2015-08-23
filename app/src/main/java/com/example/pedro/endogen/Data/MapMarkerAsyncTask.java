@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.util.Pair;
 import android.widget.Toast;
 
+import com.example.pedro.endogen.Constants;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
 import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -37,7 +38,7 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
                     // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                     // otherwise they can be skipped
                     //.setRootUrl("http://10.0.3.2:8080/_ah/api/")
-                    .setRootUrl("https://endogen-966.appspot.com/_ah/api/")
+                    .setRootUrl(Constants.APPENGINE_URL)
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)

@@ -1,12 +1,11 @@
 package com.example.pedro.myapplication.backend1.Apis;
 
-import com.example.pedro.myapplication.backend1.Model.MapMarker;
 import com.example.pedro.myapplication.backend1.Model.User;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
+import com.google.api.server.spi.config.Named;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 import static com.example.pedro.myapplication.backend1.OfyService.ofy;
@@ -22,6 +21,24 @@ public class UserEndPoint {
     @ApiMethod(name = "addUser")
     public void addUser( User user) {
         ofy().save().entity(user).now();
+    }
+
+    @ApiMethod(name= "logIn")
+    public User logIn(@Named("username") String username, @Named("password") String password){
+
+        User current= ofy().load().type(User.class).filter("username",username).first().now();
+        if(current != null){
+            log.info("One found");
+            log.info(current.getPassword());
+            log.info(password);
+            if(current.getPassword().equals( password)){
+                log.info("Pass accepted");
+                return current;
+
+            }
+        }
+        return null;
+
     }
 
 }
