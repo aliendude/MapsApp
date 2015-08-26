@@ -3,6 +3,9 @@ package com.example.pedro.myapplication.backend1.Model;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
+
+import java.io.Serializable;
+
 /**
  * Created by mac on 23/08/15.
  */

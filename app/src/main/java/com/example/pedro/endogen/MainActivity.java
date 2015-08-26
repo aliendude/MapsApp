@@ -55,10 +55,14 @@ public class MainActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //start login activity
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivityForResult(intent, 0);
+
+        if(Globals.loggedUser==null){
+            //start login activity
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivityForResult(intent, 0);
+        }
+
         setContentView(R.layout.activity_main);
 
         //create the navigation drawer
@@ -81,13 +85,13 @@ public class MainActivity extends ActionBarActivity implements
             //** Called when a drawer has settled in a completely closed state. *//*
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle("Manitou Springs");
+                //getSupportActionBar().setTitle("Manitou Springs");
             }
 
             //** Called when a drawer has settled in a completely open state. *//*
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Manitou Springs");
+               // getSupportActionBar().setTitle("Manitou Springs");
             }
         };
 
@@ -119,7 +123,10 @@ public class MainActivity extends ActionBarActivity implements
         new MapMarkerAsyncRetriever().execute();
 
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.e("pedro",Globals.loggedUser.getName());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

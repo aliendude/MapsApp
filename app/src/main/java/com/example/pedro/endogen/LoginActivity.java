@@ -156,12 +156,13 @@ public class LoginActivity extends ActionBarActivity{
                 Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             }
             else{
-                msg="Welcome!";
+
                 loggedUser=usr;
+                msg="Welcome "+loggedUser.getName()+"!";
                 Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
-                //Intent intent = new Intent();
-                //intent.pu
-                //setResult(resultcode, intent);
+                Globals.loggedUser=usr;
+                Intent intent = new Intent();
+                setResult(0, intent);
                 finish();
             }
 

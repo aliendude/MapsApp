@@ -38,12 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ChatLoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

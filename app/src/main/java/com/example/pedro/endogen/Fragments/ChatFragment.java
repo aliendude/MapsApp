@@ -1,7 +1,6 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -23,8 +22,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pedro.endogen.ChatLoginActivity;
 import com.example.pedro.endogen.Constants;
+import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.Message;
 import com.example.pedro.endogen.MessageAdapter;
 import com.example.pedro.endogen.R;
@@ -57,6 +56,7 @@ public class ChatFragment extends Fragment {
     private Handler mTypingHandler = new Handler();
     private String mUsername;
     private Socket mSocket;
+    private int numUsers;
     {
         try {
             mSocket = IO.socket(Constants.CHAT_SERVER_URL);
@@ -75,6 +75,8 @@ public class ChatFragment extends Fragment {
         mAdapter = new MessageAdapter(activity, mMessages);
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,9 +90,14 @@ public class ChatFragment extends Fragment {
         mSocket.on("user left", onUserLeft);
         mSocket.on("typing", onTyping);
         mSocket.on("stop typing", onStopTyping);
+        mSocket.on("login", onLogin);
         mSocket.connect();
 
-        startSignIn();
+        //startSignIn();
+        // perform the chat user login attempt.
+        mUsername = Globals.loggedUser.getUsername();
+        mSocket.emit("add user", mUsername);
+
     }
 
     @Override
@@ -111,6 +118,7 @@ public class ChatFragment extends Fragment {
         mSocket.off("user left", onUserLeft);
         mSocket.off("typing", onTyping);
         mSocket.off("stop typing", onStopTyping);
+        mSocket.off("login", onLogin);
     }
 
     @Override
@@ -164,21 +172,21 @@ public class ChatFragment extends Fragment {
             }
         });
     }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (Activity.RESULT_OK != resultCode) {
-            getActivity().finish();
-            return;
-        }
-
-        mUsername = data.getStringExtra("username");
-        int numUsers = data.getIntExtra("numUsers", 1);
-
-        addLog(getResources().getString(R.string.message_welcome));
-        addParticipantsLog(numUsers);
-    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (Activity.RESULT_OK != resultCode) {
+//            getActivity().finish();
+//            return;
+//        }
+//
+//        mUsername = data.getStringExtra("username");
+//        int numUsers = data.getIntExtra("numUsers", 1);
+//
+//        addLog(getResources().getString(R.string.message_welcome));
+//        addParticipantsLog(numUsers);
+//    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -256,17 +264,17 @@ public class ChatFragment extends Fragment {
         mSocket.emit("new message", message);
     }
 
-    private void startSignIn() {
-        mUsername = null;
-        Intent intent = new Intent(getActivity(), ChatLoginActivity.class);
-        startActivityForResult(intent, REQUEST_LOGIN);
-    }
+   // private void startSignIn() {
+   //     mUsername = null;
+   //     Intent intent = new Intent(getActivity(), ChatLoginActivity.class);
+   //     startActivityForResult(intent, REQUEST_LOGIN);
+   // }
 
     private void leave() {
         mUsername = null;
         mSocket.disconnect();
         mSocket.connect();
-        startSignIn();
+        //startSignIn();
     }
 
     private void scrollToBottom() {
@@ -285,7 +293,27 @@ public class ChatFragment extends Fragment {
             });
         }
     };
+    private Emitter.Listener onLogin = new Emitter.Listener() {
 
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    try {
+                        numUsers = data.getInt("numUsers");
+
+                    } catch (JSONException e) {
+                        return;
+                    }
+                    addLog(getResources().getString(R.string.message_welcome));
+                    addParticipantsLog(numUsers);
+                }
+            });
+        }
+
+    };
     private Emitter.Listener onNewMessage = new Emitter.Listener() {
         @Override
         public void call(final Object... args) {
