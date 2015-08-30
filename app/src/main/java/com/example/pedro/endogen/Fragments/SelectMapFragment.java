@@ -35,13 +35,11 @@ public class SelectMapFragment extends Fragment {
 
     MapView mMapView;
     private GoogleMap googleMap;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
 
     private static View view;
 
-    private String mParam1;
-    private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
     private double mLatitude;
@@ -49,10 +47,6 @@ public class SelectMapFragment extends Fragment {
 
     public static SelectMapFragment newInstance(String param1, String param2) {
         SelectMapFragment fragment = new SelectMapFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
     public void onSelLocPressed(){
@@ -65,10 +59,7 @@ public class SelectMapFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     private void getLocation() {

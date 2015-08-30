@@ -152,7 +152,7 @@ public class LoginActivity extends ActionBarActivity{
 
             String msg;
             if(usr==null){
-                msg="User not found";
+                msg="User not found or wrong password";
                 Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             }
             else{

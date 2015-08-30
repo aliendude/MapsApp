@@ -59,6 +59,11 @@
             android:name=".UserRegistrationActivity"
             android:label="@string/title_activity_user_registration" >
         </activity>
+        <activity
+            android:name=".CreateMarkerActivity"
+            android:label="@string/title_activity_create_marker"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

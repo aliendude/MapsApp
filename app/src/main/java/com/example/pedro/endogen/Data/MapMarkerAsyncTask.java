@@ -64,10 +64,7 @@ public class MapMarkerAsyncTask extends AsyncTask<Pair< String[], MapMarker>, Vo
             {
                 mapMarkersService.addMarker(markerToCreate).execute();
             }
-            else if (data[0]=="getMarkers")
-            {
 
-            }
 
         } catch (IOException ex) {
             ex.printStackTrace();

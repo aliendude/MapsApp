@@ -17,7 +17,7 @@
     <string name="action_send">Send</string>
     <string name="prompt_message">Message</string>
 
-    <string name="error_connect">Failed to connect</string>
+    <string name="error_connect">Failed to connect to the chat server</string>
     <string name="message_welcome">Welcome</string>
     <!-- Strings related to login -->
     <string name="prompt_username">What\'s your nickname?</string>
@@ -34,4 +34,5 @@
     </plurals>
     <string name="title_activity_select_map">SelectMapActivity</string>
     <string name="title_activity_user_registration">Register</string>
+    <string name="title_activity_create_marker">CreateMarkerActivity</string>
 </resources>

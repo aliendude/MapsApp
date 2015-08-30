@@ -20,7 +20,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.pedro.endogen.Fragments.*;
-import com.example.pedro.endogen.Interface.TabListener;
 import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarkerCollection;
@@ -39,16 +38,16 @@ import java.io.IOException;
 
 public class MainActivity extends ActionBarActivity implements
         MapFragment1.OnFragmentInteractionListener,
-        CreateMapFragment.OnFragmentInteractionListener,
+        CreateMarkerFragment.OnFragmentInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
-        ChatFragment.OnFragmentInteractionListener
+        ChatFragment.OnFragmentInteractionListener,
+        CreatedMarkersFragment.OnFragmentInteractionListener
 {
 
     private String[] listElements={"Profile","Settings","About"};
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-
 
 
     @Override
@@ -63,6 +62,7 @@ public class MainActivity extends ActionBarActivity implements
             startActivityForResult(intent, 0);
         }
 
+        new MapMarkerAsyncRetriever().execute();
         setContentView(R.layout.activity_main);
 
         //create the navigation drawer
@@ -97,6 +97,7 @@ public class MainActivity extends ActionBarActivity implements
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
         ActionBar bar= getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         ActionBar.Tab tab = bar.newTab()
@@ -107,7 +108,7 @@ public class MainActivity extends ActionBarActivity implements
         tab = bar.newTab()
                 .setText(R.string.explore_events)
                 .setIcon(R.drawable.ic_action_new)
-                .setTabListener(new TabListener<CreateMapFragment>(this, "Create", CreateMapFragment.class));
+                .setTabListener(new TabListener<CreatedMarkersFragment>(this, "Created", CreatedMarkersFragment.class));
         bar.addTab(tab);
         tab = bar.newTab()
                 .setText(R.string.explore_events)
@@ -120,12 +121,16 @@ public class MainActivity extends ActionBarActivity implements
         //bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
         //bar.setIcon(R.drawable.ic_drawer1);
         bar.setHomeButtonEnabled(true);
-        new MapMarkerAsyncRetriever().execute();
 
+
+    }
+    public void onButtonCreateMarkerPressed(View v) {
+        Intent intent = new Intent(MainActivity.this, CreateMarkerActivity.class);
+        startActivity(intent);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.e("pedro",Globals.loggedUser.getName());
+        Log.e("pedro", Globals.loggedUser.getName());
     }
 
     @Override
@@ -178,6 +183,12 @@ public class MainActivity extends ActionBarActivity implements
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+        //falta implementar
+        Log.e("pedro","fragment interaction");
+    }
+
+    @Override
+    public void onFragmentInteraction(String id) {
         //falta implementar
         Log.e("pedro","fragment interaction");
     }
@@ -251,7 +262,7 @@ public class MainActivity extends ActionBarActivity implements
                         new AndroidJsonFactory(), null)
                         // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                         // otherwise they can be skipped
-                        .setRootUrl("https://endogen-966.appspot.com/_ah/api/")
+                        .setRootUrl(Constants.APPENGINE_URL)
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
@@ -285,6 +296,7 @@ public class MainActivity extends ActionBarActivity implements
                     marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     // adding marker
                     googleMap.addMarker(marker);
+
 
                 }
             } catch(Exception e)

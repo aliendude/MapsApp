@@ -25,13 +25,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         int layout = -1;
         switch (viewType) {
         case Message.TYPE_MESSAGE:
-            layout = R.layout.item_message;
+            layout = R.layout.chat_item_message;
             break;
         case Message.TYPE_LOG:
-            layout = R.layout.item_log;
+            layout = R.layout.chat_item_log;
             break;
         case Message.TYPE_ACTION:
-            layout = R.layout.item_action;
+            layout = R.layout.chat_item_action;
             break;
         }
         View v = LayoutInflater

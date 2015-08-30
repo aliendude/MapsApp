@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.example.pedro.endogen.Fragments.CreateMapFragment">
+    tools:context="com.example.pedro.endogen.Fragments.CreateMarkerFragment">
 
 
     <ScrollView
@@ -14,7 +14,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right|top"
-            android:padding="30px"
+            android:padding="20px"
             android:background="#ffffff">
 
             <TextView
