@@ -80,6 +80,7 @@ public class CreatedMarkersFragment extends Fragment implements AbsListView.OnIt
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new MapMarkerAsyncRetriever().execute();
+        //setRetainInstance(true);
         Log.e("pedro","fragment created!");
     }
 
@@ -87,14 +88,25 @@ public class CreatedMarkersFragment extends Fragment implements AbsListView.OnIt
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_createdmarkers, container, false);
-
+        Log.e("pedro", "fragment attached!");
         return view;
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+
         try {
+
+            if(markers.size()>0){
+                mAdapter = new ListViewMarkerAdapter(getActivity(),markers);
+                // Set the adapter
+                mListView = (ListView) view.findViewById(R.id.markers_list_view);
+                mListView.setAdapter(mAdapter);
+
+                // Set OnItemClickListener so we can be notified on item clicks
+                mListView.setOnItemClickListener(CreatedMarkersFragment.this);
+            }
             mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()

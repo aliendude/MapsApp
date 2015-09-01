@@ -62,7 +62,7 @@ public class MainActivity extends ActionBarActivity implements
             startActivityForResult(intent, 0);
         }
 
-        new MapMarkerAsyncRetriever().execute();
+
         setContentView(R.layout.activity_main);
 
         //create the navigation drawer
@@ -248,63 +248,6 @@ public class MainActivity extends ActionBarActivity implements
     }
 
 
-    private class MapMarkerAsyncRetriever extends AsyncTask<Void, Void, MapMarkerCollection>
-    {
 
-        public MapMarkerAsyncRetriever() {
-
-        }
-        private Mapmarkers mapMarkersService = null;
-        @Override
-        protected MapMarkerCollection doInBackground(Void... params) {
-            if (mapMarkersService == null) {
-                Mapmarkers.Builder builder = new Mapmarkers.Builder(AndroidHttp.newCompatibleTransport(),
-                        new AndroidJsonFactory(), null)
-                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
-                        // otherwise they can be skipped
-                        .setRootUrl(Constants.APPENGINE_URL)
-                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                            @Override
-                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
-                                    throws IOException {
-                                abstractGoogleClientRequest.setDisableGZipContent(true);
-                            }
-                        });
-                // end of optional local run code
-
-                mapMarkersService = builder.build();
-            }
-            try {
-                return  mapMarkersService.getMapMarkers().execute();
-            } catch (IOException e) {
-                return null;
-            }
-        }
-
-        @Override
-        protected void onPostExecute(final MapMarkerCollection result) {
-            MapView mMapView = (MapView) findViewById(R.id.mapView);
-            try{
-
-                GoogleMap googleMap = mMapView.getMap();
-                for (MapMarker element : result.getItems()) {
-                    double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
-                    double latitude = Double.parseDouble(element.getLocation().split(" ")[0]);
-                    // create marker
-                    MarkerOptions marker = new MarkerOptions().position(new LatLng(latitude, longitude)).title(element.getDescription());
-                    // Changing marker icon
-                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                    // adding marker
-                    googleMap.addMarker(marker);
-
-
-                }
-            } catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-
-        }
-    }
 }
 

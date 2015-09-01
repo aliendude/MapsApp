@@ -111,6 +111,7 @@ public class CreateMarkerFragment extends Fragment {
         m.setDescription(desc);
         MapMarkerAsyncTask callbackend1 = new MapMarkerAsyncTask(getActivity());
         callbackend1.execute(new Pair<String[],MapMarker>(strArr,m));
+        getActivity().finish();
     }
 
     @Override
