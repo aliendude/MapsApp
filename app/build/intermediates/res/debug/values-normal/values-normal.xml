@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values-normal/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="spacing">4dp</dimen>
+    <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values-normal/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="AppTheme.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@color/username7</item>
+        <item name="height">40dp</item>
+        <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
+
+    </style>
+</resources>

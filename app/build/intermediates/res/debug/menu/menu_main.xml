@@ -5,4 +5,4 @@
     <item android:id="@+id/log_out" android:title="@string/log_out"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/menu/menu_main.xml -->
+<!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/menu/menu_main.xml -->

@@ -1,21 +1,94 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context="com.example.pedro.endogen.LoginActivity" tools:ignore="MergeRootFrame">
+    tools:context="com.example.pedro.endogen.LoginActivity" tools:ignore="MergeRootFrame"
+    android:background="#ffffff">
 
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="203dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/frame_login">
 
             <FrameLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center"></FrameLayout>
+                android:layout_gravity="center">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username:"
+                        android:id="@+id/textView" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/login_username_text" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Password:"
+                            android:id="@+id/passwordView" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:id="@+id/login_password_text" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Log in"
+                        android:id="@+id/login_button"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="onLogInButtonPressed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="or:"
+                        android:id="@+id/textView9"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="10dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sign up"
+                        android:id="@+id/signup_button"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="onSignUpButtonPressed" />
+
+                </LinearLayout>
+            </FrameLayout>
         </FrameLayout>
 
 
 </FrameLayout>
-<!-- From: file:/home/pedro/AndroidStudioProjects/Endogen/app/src/main/res/layout/activity_login.xml -->
+<!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/layout/activity_login.xml -->
