@@ -64,6 +64,10 @@
             android:label="@string/title_activity_create_marker"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
+        <activity
+            android:name=".LoggedUserActivity"
+            android:label="@string/title_activity_logged_user" >
+        </activity>
     </application>
 
 </manifest>

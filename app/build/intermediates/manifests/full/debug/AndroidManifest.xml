@@ -71,6 +71,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
         <activity
+            android:name="com.example.pedro.endogen.LoggedUserActivity"
+            android:label="@string/title_activity_logged_user" >
+        </activity>
+        <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" />
     </application>

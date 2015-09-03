@@ -395,6 +395,7 @@ available. Please contact the developer for assistance.</string>
     <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_create_marker">CreateMarkerActivity</string>
+    <string name="title_activity_logged_user">LoggedUser</string>
     <string name="title_activity_login">Log In</string>
     <string name="title_activity_select_location_maps">SelectLocationMap</string>
     <string name="title_activity_select_map">SelectMapActivity</string>

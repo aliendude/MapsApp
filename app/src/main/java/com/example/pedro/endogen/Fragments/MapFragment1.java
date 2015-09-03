@@ -19,12 +19,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pedro.endogen.Constants;
+import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.R;
 import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarkerCollection;
+import com.github.nkzawa.emitter.Emitter;
+import com.github.nkzawa.socketio.client.IO;
+import com.github.nkzawa.socketio.client.Socket;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -42,37 +48,44 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 
 public class MapFragment1 extends Fragment{
 
     MapView mMapView;
     private GoogleMap googleMap;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
     private Location mLastLocation;
     private GoogleApiClient mGoogleApiClient;
     private double mLongitude;
     private double mLatitude;
+    private static View view;
+    private Socket mSocket;
+    private int numUsers;
+    private String mUsername;
 
+    {
+        try {
+            //socket to handle the calls to the location tracking server
+            mSocket = IO.socket(Constants.LOC_TRACKING_SERVER_URL);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public static MapFragment1 newInstance(String param1, String param2) {
         MapFragment1 fragment = new MapFragment1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
     public void onSelLocPressed(){
 
-        Log.e("pedro","pressed");
+        Log.e("pedro", "pressed");
     }
     public MapFragment1() {
         // Required empty public constructor
@@ -81,13 +94,35 @@ public class MapFragment1 extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
+        mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
+        mSocket.on("new message", onNewMessage);
+        mSocket.on("user joined", onUserJoined);
+        mSocket.on("user left", onUserLeft);
+        mSocket.on("login", onLogin);
+        mSocket.connect();
+        mUsername = Globals.loggedUser.getUsername();
+        mSocket.emit("add user", mUsername);
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        mSocket.disconnect();
+        mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
+        mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
+        mSocket.off("new message", onNewMessage);
+        mSocket.off("user joined", onUserJoined);
+        mSocket.off("user left", onUserLeft);
+        mSocket.off("login", onLogin);
     }
 
-    private static View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Log.e("pedro","created");
+
         if (view != null) {
             ViewGroup parent = (ViewGroup) view.getParent();
             if (parent != null)
@@ -1162,6 +1197,7 @@ public class MapFragment1 extends Fragment{
         }
         return view;
     }
+
     public void onGoToMyLocationPressed(View view) {
         getLocation();
         CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -1169,15 +1205,12 @@ public class MapFragment1 extends Fragment{
         googleMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+
         try {
             mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
@@ -1191,6 +1224,118 @@ public class MapFragment1 extends Fragment{
         super.onDetach();
         mListener = null;
     }
+
+    private void addParticipantsLog(int numUsers){
+        TextView nParticipantsText= (TextView) view.findViewById(R.id.location_tracking_nusers_text);
+        nParticipantsText.setText("Users online: "+numUsers);
+        //Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+    }
+    private void addLog(String log){
+        Toast.makeText(getActivity(), log, Toast.LENGTH_LONG).show();
+    }
+    private Emitter.Listener onConnectError = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            R.string.error_connect, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    };
+    private Emitter.Listener onLogin = new Emitter.Listener() {
+
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    try {
+                        numUsers = data.getInt("numUsers");
+
+                    } catch (JSONException e) {
+                        return;
+                    }
+                    Log.e("pedro",getResources().getString(R.string.message_welcome));
+                    addParticipantsLog(numUsers);
+                }
+            });
+        }
+
+    };
+    private Emitter.Listener onNewMessage = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String username;
+                    String message;
+                    try {
+                        username = data.getString("username");
+                        message = data.getString("message");
+                    } catch (JSONException e) {
+                        return;
+                    }
+
+
+                    // addMessage(username, message);
+                }
+            });
+        }
+    };
+
+    private Emitter.Listener onUserJoined = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String username;
+                    int numUsers;
+                    try {
+                        username = data.getString("username");
+                        numUsers = data.getInt("numUsers");
+                    } catch (JSONException e) {
+                        return;
+                    }
+
+                    addLog(getResources().getString(R.string.message_user_joined, username));
+                    addParticipantsLog(numUsers);
+                }
+            });
+        }
+    };
+
+    private Emitter.Listener onUserLeft = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String username;
+                    int numUsers;
+                    try {
+                        username = data.getString("username");
+                        numUsers = data.getInt("numUsers");
+                    } catch (JSONException e) {
+                        return;
+                    }
+
+                    addLog(getResources().getString(R.string.message_user_left, username));
+                    addParticipantsLog(numUsers);
+
+                }
+            });
+        }
+    };
 
     private void getLocation() {
         // Get the location manager
