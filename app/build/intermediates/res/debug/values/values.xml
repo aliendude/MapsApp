@@ -365,6 +365,7 @@ available. Please contact the developer for assistance.</string>
     <string name="drawer_close">close</string>
     <string name="drawer_open">open</string>
     <string name="error_connect">Failed to connect to the chat server</string>
+    <string name="error_connect2">Failed to connect to the location server</string>
     <string name="error_field_required">This field is required</string>
     <string name="explore_events"/>
     <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/debug/res/values/google_maps_api.xml -->

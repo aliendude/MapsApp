@@ -42,6 +42,7 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -53,6 +54,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MapFragment1 extends Fragment{
@@ -70,7 +73,7 @@ public class MapFragment1 extends Fragment{
     private Socket mSocket;
     private int numUsers;
     private String mUsername;
-
+    private Map<String, Marker> usersMarkersMap =new HashMap<>();
     {
         try {
             //socket to handle the calls to the location tracking server
@@ -99,11 +102,13 @@ public class MapFragment1 extends Fragment{
         mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
         mSocket.on("new message", onNewMessage);
         mSocket.on("user joined", onUserJoined);
+        mSocket.on("location_changed", onLocationChanged);
         mSocket.on("user left", onUserLeft);
         mSocket.on("login", onLogin);
         mSocket.connect();
         mUsername = Globals.loggedUser.getUsername();
-        mSocket.emit("add user", mUsername);
+        getLocation();
+        mSocket.emit("add user", mUsername,mLongitude+","+mLatitude);
     }
     @Override
     public void onDestroy() {
@@ -112,7 +117,8 @@ public class MapFragment1 extends Fragment{
         mSocket.disconnect();
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
-        mSocket.off("new message", onNewMessage);
+        mSocket.off("new mesage", onNewMessage);
+        mSocket.off("location_changed",onLocationChanged);
         mSocket.off("user joined", onUserJoined);
         mSocket.off("user left", onUserLeft);
         mSocket.off("login", onLogin);
@@ -1198,6 +1204,11 @@ public class MapFragment1 extends Fragment{
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if(numUsers!=0)addParticipantsLog(numUsers);
+    }
     public void onGoToMyLocationPressed(View view) {
         getLocation();
         CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -1240,10 +1251,33 @@ public class MapFragment1 extends Fragment{
                 @Override
                 public void run() {
                     Toast.makeText(getActivity().getApplicationContext(),
-                            R.string.error_connect, Toast.LENGTH_LONG).show();
+                            R.string.error_connect2, Toast.LENGTH_LONG).show();
                 }
             });
         }
+    };
+    private Emitter.Listener onLocationChanged = new Emitter.Listener() {
+
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String username;
+                    String location;
+                    try {
+                        username = data.getString("username");
+                        location = data.getString("location");
+
+                    } catch (JSONException e) {
+                        return;
+                    }
+
+                }
+            });
+        }
+
     };
     private Emitter.Listener onLogin = new Emitter.Listener() {
 
@@ -1281,8 +1315,6 @@ public class MapFragment1 extends Fragment{
                     } catch (JSONException e) {
                         return;
                     }
-
-
                     // addMessage(username, message);
                 }
             });
@@ -1298,14 +1330,38 @@ public class MapFragment1 extends Fragment{
                 public void run() {
                     JSONObject data = (JSONObject) args[0];
                     String username;
-                    int numUsers;
+                    String location, latitude,longitude;
                     try {
                         username = data.getString("username");
                         numUsers = data.getInt("numUsers");
+                        location = data.getString("location").trim();
+                        latitude= location.split(",")[0];
+                        longitude= location.split(",")[1];
                     } catch (JSONException e) {
                         return;
                     }
+                    if(usersMarkersMap.containsKey(username)){
+                        Marker usermarker=usersMarkersMap.get(username);
+                        usermarker.remove();
+                        usersMarkersMap.remove(username);
 
+                        MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                        Marker marker= googleMap.addMarker(markerOptions);
+                        usersMarkersMap.put(username,marker);
+                        //usersMarkersMap.(username)
+                    }else{
+                        // create marker
+                        MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                        // Changing marker icon
+                        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                        // adding marker
+                        Log.e("pedro","marker added");
+                        Log.e("lat",latitude);
+                        Log.e("lon",longitude);
+                        Marker marker= googleMap.addMarker(markerOptions);
+                        usersMarkersMap.put(username,marker);
+                    }
                     addLog(getResources().getString(R.string.message_user_joined, username));
                     addParticipantsLog(numUsers);
                 }
@@ -1321,7 +1377,7 @@ public class MapFragment1 extends Fragment{
                 public void run() {
                     JSONObject data = (JSONObject) args[0];
                     String username;
-                    int numUsers;
+
                     try {
                         username = data.getString("username");
                         numUsers = data.getInt("numUsers");
@@ -1344,10 +1400,16 @@ public class MapFragment1 extends Fragment{
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, false);
         Location location = locationManager.getLastKnownLocation(bestProvider);
+        final int[] locationChangedCounter = {0};
         LocationListener loc_listener = new LocationListener() {
 
             public void onLocationChanged(Location l) {
-
+                locationChangedCounter[0]++;
+                if(locationChangedCounter[0]>10)
+                {
+                    locationChangedCounter[0]=0;
+                    mSocket.emit("location changed", l.getLatitude()+"," +l.getLongitude());
+                }
                 //Log.e("pedro","location_changed");
             }
             public void onProviderEnabled(String p) {}
@@ -1414,11 +1476,11 @@ public class MapFragment1 extends Fragment{
                     double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
                     double latitude = Double.parseDouble(element.getLocation().split(" ")[0]);
                     // create marker
-                    MarkerOptions marker = new MarkerOptions().position(new LatLng(latitude, longitude)).title(element.getDescription());
+                    MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(latitude, longitude)).title(element.getDescription());
                     // Changing marker icon
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_arrow_down));
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_arrow_down));
                     // adding marker
-                    googleMap.addMarker(marker);
+                    Marker marker= googleMap.addMarker(markerOptions);
 
                 }
             } catch(Exception e)

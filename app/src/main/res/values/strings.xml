@@ -18,6 +18,7 @@
     <string name="prompt_message">Message</string>
 
     <string name="error_connect">Failed to connect to the chat server</string>
+    <string name="error_connect2">Failed to connect to the location server</string>
     <string name="message_welcome">Welcome</string>
     <!-- Strings related to login -->
     <string name="prompt_username">What\'s your nickname?</string>
