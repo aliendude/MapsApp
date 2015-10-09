@@ -5,6 +5,9 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -16,7 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.support.v4.app.Fragment;
 import com.example.pedro.endogen.Fragments.ChatFragment;
 import com.example.pedro.endogen.Fragments.CreateMarkerFragment;
 import com.example.pedro.endogen.Fragments.CreatedMarkersFragment;
@@ -28,12 +31,15 @@ public class LoggedUserActivity extends ActionBarActivity implements
         CreateMarkerFragment.OnFragmentInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
         ChatFragment.OnFragmentInteractionListener,
-        CreatedMarkersFragment.OnFragmentInteractionListener{
+        CreatedMarkersFragment.OnFragmentInteractionListener,
+         ActionBar.TabListener{
 
     private String[] listElements={"Profile","Settings","About"};
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    private AppSectionsPagerAdapter mAppSectionsPagerAdapter;
+    private ViewPager mViewPager;
 
 
     @Override
@@ -74,22 +80,39 @@ public class LoggedUserActivity extends ActionBarActivity implements
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        ActionBar bar= getSupportActionBar();
+        // Create the adapter that will return a fragment for each of the three primary sections
+        // of the app.
+        mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager());
+
+        final ActionBar bar= getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        // user swipes between sections.
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mAppSectionsPagerAdapter);
+        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                // When swiping between different app sections, select the corresponding tab.
+                // We can also use ActionBar.Tab#select() to do this if we have a reference to the
+                // Tab.
+                bar.setSelectedNavigationItem(position);
+            }
+        });
         ActionBar.Tab tab = bar.newTab()
-                .setText(R.string.new_event)
+                .setText(R.string.explore_events)
                 .setIcon(R.drawable.ic_action_map)
-                .setTabListener(new TabListener<MapFragment1>(this, "Maps", MapFragment1.class));
+                .setTabListener(this);
         bar.addTab(tab);
         tab = bar.newTab()
-                .setText(R.string.explore_events)
+                .setText(R.string.new_event)
                 .setIcon(R.drawable.ic_action_new)
-                .setTabListener(new TabListener<CreatedMarkersFragment>(this, "Created", CreatedMarkersFragment.class));
+                .setTabListener(this);
         bar.addTab(tab);
         tab = bar.newTab()
-                .setText(R.string.explore_events)
+                .setText(R.string.chat)
                 .setIcon(R.drawable.ic_action_chat)
-                .setTabListener(new TabListener<ChatFragment>(this, "Chat", ChatFragment.class));
+                .setTabListener(this);
         bar.addTab(tab);
 
         bar.setDisplayHomeAsUpEnabled(true);
@@ -100,14 +123,60 @@ public class LoggedUserActivity extends ActionBarActivity implements
 
 
     }
+
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+        // When the given tab is selected, switch to the corresponding page in the ViewPager.
+        mViewPager.setCurrentItem(tab.getPosition());
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    public static class AppSectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public AppSectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            switch (i) {
+                case 0:
+                    // The first section of the app is the most interesting -- it offers
+                    // a launchpad into the other demonstrations in this example application.
+                    return new MapFragment1();
+                case 1:
+                    return new CreatedMarkersFragment();
+                default:
+                    return new ChatFragment();
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "Section " + (position + 1);
+        }
+    }
+
     public void onButtonCreateMarkerPressed(View v) {
         Intent intent = new Intent(LoggedUserActivity.this, CreateMarkerActivity.class);
         startActivity(intent);
     }
 
-    protected void setUpGUI(){
 
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
