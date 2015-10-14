@@ -2,6 +2,9 @@ package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
@@ -74,6 +77,8 @@ public class MapFragment1 extends Fragment{
     private int numUsers;
     private String mUsername;
     private Map<String, Marker> usersMarkersMap =new HashMap<>();
+    private Marker user_marker;
+
     {
         try {
             //socket to handle the calls to the location tracking server
@@ -102,13 +107,13 @@ public class MapFragment1 extends Fragment{
         mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
         mSocket.on("new message", onNewMessage);
         mSocket.on("user joined", onUserJoined);
-        mSocket.on("location_changed", onLocationChanged);
+        mSocket.on("location changed", onLocationChanged);
         mSocket.on("user left", onUserLeft);
         mSocket.on("login", onLogin);
         mSocket.connect();
         mUsername = Globals.loggedUser.getUsername();
         getLocation();
-        mSocket.emit("add user", mUsername,mLongitude+","+mLatitude);
+        mSocket.emit("add user", mUsername, mLongitude + "," + mLatitude);
     }
     @Override
     public void onDestroy() {
@@ -118,7 +123,7 @@ public class MapFragment1 extends Fragment{
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
         mSocket.off("new mesage", onNewMessage);
-        mSocket.off("location_changed",onLocationChanged);
+        mSocket.off("location changed", onLocationChanged);
         mSocket.off("user joined", onUserJoined);
         mSocket.off("user left", onUserLeft);
         mSocket.off("login", onLogin);
@@ -1173,18 +1178,18 @@ public class MapFragment1 extends Fragment{
 
             //adding user's location marker
             try {
-                getLocation();
+
+                //getLocation();
                 // user's location:
                 marker = new MarkerOptions().position(new LatLng(mLatitude,mLongitude)).title("You");
                 // Changing marker icon
                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
                 // adding marker
-                googleMap.addMarker(marker);
+                user_marker=googleMap.addMarker(marker);
 
             }catch (Exception e){
                 Log.e("pedro","could not get your location");
             }
-
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(38.858641, -104.918241)).zoom(17).build();
@@ -1211,6 +1216,12 @@ public class MapFragment1 extends Fragment{
     }
     public void onGoToMyLocationPressed(View view) {
         getLocation();
+        user_marker.remove();
+        MarkerOptions marker = new MarkerOptions().position(new LatLng(mLatitude, mLongitude)).title("You");
+        // Changing marker icon
+        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+        // adding marker
+        user_marker=googleMap.addMarker(marker);
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new LatLng(mLatitude,mLongitude)).zoom(16).build();
         googleMap.animateCamera(CameraUpdateFactory
@@ -1244,14 +1255,20 @@ public class MapFragment1 extends Fragment{
     private void addLog(String log){
         Toast.makeText(getActivity(), log, Toast.LENGTH_LONG).show();
     }
+    private int errorCount=0;
     private Emitter.Listener onConnectError = new Emitter.Listener() {
         @Override
         public void call(Object... args) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getActivity().getApplicationContext(),
-                            R.string.error_connect2, Toast.LENGTH_LONG).show();
+                   if(errorCount <20 || errorCount==0){
+                       errorCount++;
+                   }else{
+                       errorCount=0;
+                    Toast.makeText(getActivity().getApplicationContext(),R.string.error_connect2, Toast.LENGTH_LONG).show();
+                   }
+
                 }
             });
         }
@@ -1264,11 +1281,34 @@ public class MapFragment1 extends Fragment{
                 @Override
                 public void run() {
                     JSONObject data = (JSONObject) args[0];
-                    String username;
-                    String location;
                     try {
-                        username = data.getString("username");
-                        location = data.getString("location");
+                        String username = data.getString("username");
+                        String location = data.getString("location").trim();
+                        String latitude = location.split(",")[0];
+                        String longitude = location.split(",")[1];
+                            Log.e("pedro",username+" change location");
+                        if(usersMarkersMap.containsKey(username)){
+                            Marker usermarker=usersMarkersMap.get(username);
+                            usermarker.remove();
+                            usersMarkersMap.remove(username);
+
+                            MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                            Marker marker= googleMap.addMarker(markerOptions);
+                            usersMarkersMap.put(username,marker);
+                            //usersMarkersMap.(username)
+                        }else{
+                            // create marker
+                            MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                            // Changing marker icon
+                            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                            // adding marker
+                            Log.e("pedro","marker added");
+                            Log.e("lat",latitude);
+                            Log.e("lon",longitude);
+                            Marker marker= googleMap.addMarker(markerOptions);
+                            usersMarkersMap.put(username,marker);
+                        }
 
                     } catch (JSONException e) {
                         return;
@@ -1392,39 +1432,74 @@ public class MapFragment1 extends Fragment{
             });
         }
     };
-
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
+    }
     private void getLocation() {
         // Get the location manager
         LocationManager locationManager = (LocationManager)
                 getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+        if ( !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+            //Log.e("pedro","si");
+            buildAlertMessageNoGps();
+        }
+        else{
+            //Log.e("pedro","no");
+        }
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, false);
         Location location = locationManager.getLastKnownLocation(bestProvider);
-        final int[] locationChangedCounter = {0};
+        final int[] locationChangedCounter = {-1};
         LocationListener loc_listener = new LocationListener() {
 
             public void onLocationChanged(Location l) {
                 locationChangedCounter[0]++;
-                if(locationChangedCounter[0]>10)
+                if(locationChangedCounter[0]>100 || locationChangedCounter[0]==0)
                 {
                     locationChangedCounter[0]=0;
-                    mSocket.emit("location changed", l.getLatitude()+"," +l.getLongitude());
+                    user_marker.remove();
+                    // user's location:
+                    mLatitude=l.getLatitude();
+                    mLongitude=l.getLongitude();
+                    MarkerOptions marker = new MarkerOptions().position(new LatLng(l.getLatitude(), l.getLongitude())).title("You");
+                    // Changing marker icon
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                    // adding marker
+                    user_marker=googleMap.addMarker(marker);
+
+                    mSocket.emit("location changed", l.getLatitude() + "," + l.getLongitude());
+                   // Log.e("pedro","location_changed");
+                    Toast.makeText(getActivity(), "location changed", Toast.LENGTH_LONG).show();
                 }
-                //Log.e("pedro","location_changed");
+                //
             }
             public void onProviderEnabled(String p) {}
             public void onProviderDisabled(String p) {}
             public void onStatusChanged(String p, int status, Bundle extras) {}
         };
-        locationManager
-                .requestLocationUpdates(bestProvider, 0, 0, loc_listener);
-        location = locationManager.getLastKnownLocation(bestProvider);
+        locationManager.requestLocationUpdates(bestProvider, 0, 0, loc_listener);
+        //location = locationManager.getLastKnownLocation(bestProvider);
         try {
             mLatitude = location.getLatitude();
             mLongitude = location.getLongitude();
         } catch (NullPointerException e) {
             mLatitude = -1.0;
             mLongitude = -1.0;
+            //Toast.makeText(getActivity(), "Please enable your GPS", Toast.LENGTH_LONG).show();
         }
     }
 
