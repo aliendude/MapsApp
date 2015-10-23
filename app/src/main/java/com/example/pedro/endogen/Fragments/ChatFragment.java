@@ -27,6 +27,7 @@ import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.Message;
 import com.example.pedro.endogen.MessageAdapter;
 import com.example.pedro.endogen.R;
+import com.example.pedro.endogen.SessionManager;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -93,9 +94,8 @@ public class ChatFragment extends Fragment {
         mSocket.on("login", onLogin);
         mSocket.connect();
 
-        //startSignIn();
-        // perform the chat user login attempt.
-        mUsername = Globals.loggedUser.getUsername();
+        SessionManager sessionManager = new SessionManager(getActivity().getApplicationContext());
+        mUsername = sessionManager.getUserDetails().get("name");
         mSocket.emit("add user", mUsername);
 
     }

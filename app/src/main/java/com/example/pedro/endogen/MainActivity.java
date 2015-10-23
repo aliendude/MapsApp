@@ -39,13 +39,13 @@ import java.io.IOException;
 public class MainActivity extends ActionBarActivity
 {
 
-
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-        if(Globals.loggedUser==null){
+        sessionManager = new SessionManager(getApplicationContext());
+         if(!sessionManager.isLoggedIn()){
             //start login activity
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.e("pedro", Globals.loggedUser.getName());
+        Log.e("pedro", sessionManager.getUserDetails().get("name"));
         Intent intent = new Intent(MainActivity.this, LoggedUserActivity.class);
         startActivity(intent);
     }

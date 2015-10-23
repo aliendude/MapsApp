@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.pedro.endogen.Constants;
 import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.R;
+import com.example.pedro.endogen.SessionManager;
 import com.example.pedro.myapplication.backend1.mapmarkers.Mapmarkers;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarker;
 import com.example.pedro.myapplication.backend1.mapmarkers.model.MapMarkerCollection;
@@ -111,7 +112,8 @@ public class MapFragment1 extends Fragment{
         mSocket.on("user left", onUserLeft);
         mSocket.on("login", onLogin);
         mSocket.connect();
-        mUsername = Globals.loggedUser.getUsername();
+        SessionManager sessionManager = new SessionManager(getActivity().getApplicationContext());
+        mUsername = sessionManager.getUserDetails().get("name");
         getLocation();
         mSocket.emit("add user", mUsername, mLongitude + "," + mLatitude);
     }
