@@ -49,17 +49,31 @@ public class MainActivity extends ActionBarActivity
             //start login activity
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivityForResult(intent, 0);
+            startActivityForResult(intent,0);
         }
+        else{
+             Intent intent = new Intent(MainActivity.this, LoggedUserActivity.class);
+             startActivityForResult(intent, 1);
+         }
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.e("pedro", sessionManager.getUserDetails().get("name"));
-        Intent intent = new Intent(MainActivity.this, LoggedUserActivity.class);
-        startActivity(intent);
+        if(requestCode==0) {
+            //a log in activity was finished
+            if (resultCode == 1) {
+            //the log in was successful
+                Log.e("pedro", sessionManager.getUserDetails().get("name"));
+                Intent intent = new Intent(MainActivity.this, LoggedUserActivity.class);
+                startActivityForResult(intent, 1);
+            }
+           else{
+                finish();
+            }
+        }else if(requestCode==1){
+            //a logged user activity was finished
+            finish();
+        }
     }
 
     @Override
