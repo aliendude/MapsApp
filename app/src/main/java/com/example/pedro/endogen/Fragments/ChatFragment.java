@@ -111,6 +111,9 @@ public class ChatFragment extends Fragment {
         super.onDestroy();
 
         mSocket.disconnect();
+        destroy();
+    }
+    public void destroy(){
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
         mSocket.off("new message", onNewMessage);
@@ -120,7 +123,6 @@ public class ChatFragment extends Fragment {
         mSocket.off("stop typing", onStopTyping);
         mSocket.off("login", onLogin);
     }
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -278,7 +280,9 @@ public class ChatFragment extends Fragment {
     }
 
     private void scrollToBottom() {
-        mMessagesView.scrollToPosition(mAdapter.getItemCount() - 1);
+        try {
+            mMessagesView.scrollToPosition(mAdapter.getItemCount() - 1);
+        }catch(Exception e){}
     }
 
     private Emitter.Listener onConnectError = new Emitter.Listener() {
@@ -287,8 +291,10 @@ public class ChatFragment extends Fragment {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getActivity().getApplicationContext(),
-                            R.string.error_connect, Toast.LENGTH_LONG).show();
+                    try {
+                        Toast.makeText(getActivity().getApplicationContext(),R.string.error_connect, Toast.LENGTH_LONG).show();
+                    }catch(Exception e)
+                    {}
                 }
             });
         }

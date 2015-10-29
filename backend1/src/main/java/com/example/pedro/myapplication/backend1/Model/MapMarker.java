@@ -1,5 +1,6 @@
 package com.example.pedro.myapplication.backend1.Model;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
@@ -12,7 +13,9 @@ import java.util.Date;
 public class MapMarker {
 
         @Id
-        private Long key;
+        private Long id;
+        @Index
+        private Ref<User> created_by;
 
         private String name;
 
@@ -25,6 +28,8 @@ public class MapMarker {
         private String nparticipants;
 
         private String description;
+
+        public void setCreator(User value) { created_by = Ref.create(value); }
 
         public String getName() {
             return name;

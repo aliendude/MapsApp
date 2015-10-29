@@ -59,7 +59,7 @@ public class LoggedUserActivity extends ActionBarActivity implements
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  //* host Activity *//*
                 mDrawerLayout,         //* DrawerLayout object *//*
-                R.drawable.ic_drawer1,  //* nav drawer icon to replace 'Up' caret *//*
+                R.drawable.ic_drawer,  //* nav drawer icon to replace 'Up' caret *//*
                 R.string.drawer_open,  //* "open drawer" description *//*
                 R.string.drawer_close  //* "close drawer" description *//*
         ) {
@@ -82,6 +82,7 @@ public class LoggedUserActivity extends ActionBarActivity implements
 
         // Create the adapter that will return a fragment for each of the three primary sections
         // of the app.
+
         mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager());
 
         final ActionBar bar= getSupportActionBar();
@@ -142,6 +143,9 @@ public class LoggedUserActivity extends ActionBarActivity implements
 
     public static class AppSectionsPagerAdapter extends FragmentPagerAdapter {
 
+        MapFragment1 mapFragment =  new MapFragment1();
+        CreatedMarkersFragment createdMarkersFragment =new CreatedMarkersFragment();
+        ChatFragment chatFragment = new ChatFragment();
         public AppSectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -152,11 +156,11 @@ public class LoggedUserActivity extends ActionBarActivity implements
                 case 0:
                     // The first section of the app is the most interesting -- it offers
                     // a launchpad into the other demonstrations in this example application.
-                    return new MapFragment1();
+                    return mapFragment;
                 case 1:
-                    return new CreatedMarkersFragment();
+                    return createdMarkersFragment;
                 default:
-                    return new ChatFragment();
+                    return chatFragment;
             }
         }
 
@@ -220,6 +224,10 @@ public class LoggedUserActivity extends ActionBarActivity implements
             // Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             //startActivity(intent);
+            Intent intent = new Intent();
+            setResult(2, intent);
+            mAppSectionsPagerAdapter.mapFragment.destroy();
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

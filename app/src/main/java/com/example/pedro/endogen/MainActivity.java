@@ -68,11 +68,21 @@ public class MainActivity extends ActionBarActivity
                 startActivityForResult(intent, 1);
             }
            else{
+                //the user pressed the back button
                 finish();
             }
         }else if(requestCode==1){
             //a logged user activity was finished
-            finish();
+            if(resultCode==2){
+                //the user logged out so start login activity again
+                sessionManager.logoutUser();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivityForResult(intent,0);
+            }
+            else{
+                finish();
+            }
         }
     }
 

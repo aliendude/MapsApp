@@ -162,7 +162,7 @@ public class LoginActivity extends ActionBarActivity{
                 Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
                 //Globals.loggedUser=usr;
                 SessionManager sessionManager = new SessionManager(getApplicationContext());
-                sessionManager.createLoginSession(usr.getName(),usr.getEmail());
+                sessionManager.createLoginSession(usr.getName(),usr.getEmail(),usr.getUsername(),usr.getId().toString());
                 Intent intent = new Intent();
                 setResult(1, intent);
                 finish();

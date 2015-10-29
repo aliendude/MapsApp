@@ -1,6 +1,7 @@
 package com.example.pedro.myapplication.backend1;
 
 
+import com.example.pedro.myapplication.backend1.Model.ChatMessage;
 import com.example.pedro.myapplication.backend1.Model.MapMarker;
 import com.example.pedro.myapplication.backend1.Model.User;
 import com.googlecode.objectify.Objectify;
@@ -16,6 +17,7 @@ public class OfyService {
     static {
         ObjectifyService.register(MapMarker.class);
         ObjectifyService.register(User.class);
+        ObjectifyService.register(ChatMessage.class);
     }
 
     public static Objectify ofy() {

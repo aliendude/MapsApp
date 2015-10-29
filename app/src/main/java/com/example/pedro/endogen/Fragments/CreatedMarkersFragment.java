@@ -48,7 +48,6 @@ public class CreatedMarkersFragment extends Fragment implements AbsListView.OnIt
 
     ArrayList markers= new ArrayList<MapMarker>();
 
-
     private OnFragmentInteractionListener mListener;
 
     /**

@@ -120,6 +120,9 @@ public class MapFragment1 extends Fragment{
     @Override
     public void onDestroy() {
         super.onDestroy();
+        destroy();
+    }
+    public void destroy(){
 
         mSocket.disconnect();
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
@@ -131,7 +134,9 @@ public class MapFragment1 extends Fragment{
         mSocket.off("login", onLogin);
     }
 
-
+    public Socket getmSocket() {
+        return mSocket;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Log.e("pedro","created");
@@ -143,6 +148,9 @@ public class MapFragment1 extends Fragment{
         }
         try {
             view =  inflater.inflate(R.layout.fragment_map, container, false);
+            TextView nParticipantsText= (TextView) view.findViewById(R.id.location_tracking_nusers_text);
+            //this will change when the socket connects
+            nParticipantsText.setText("connecting...");
             mMapView = (MapView) view.findViewById(R.id.mapView);
             mMapView.onCreate(savedInstanceState);
 
@@ -1269,6 +1277,9 @@ public class MapFragment1 extends Fragment{
                    }else{
                        errorCount=0;
                     Toast.makeText(getActivity().getApplicationContext(),R.string.error_connect2, Toast.LENGTH_LONG).show();
+                       TextView nParticipantsText= (TextView) view.findViewById(R.id.location_tracking_nusers_text);
+                       //this will change when the socket connects
+                       nParticipantsText.setText("offline");
                    }
 
                 }
@@ -1470,7 +1481,7 @@ public class MapFragment1 extends Fragment{
 
             public void onLocationChanged(Location l) {
                 locationChangedCounter[0]++;
-                if(locationChangedCounter[0]>100 || locationChangedCounter[0]==0)
+                if(locationChangedCounter[0]>1000 || locationChangedCounter[0]==0)
                 {
                     locationChangedCounter[0]=0;
                     user_marker.remove();
@@ -1485,7 +1496,12 @@ public class MapFragment1 extends Fragment{
 
                     mSocket.emit("location changed", l.getLatitude() + "," + l.getLongitude());
                    // Log.e("pedro","location_changed");
-                    Toast.makeText(getActivity(), "location changed", Toast.LENGTH_LONG).show();
+                    try {
+                        Toast.makeText(getActivity(), "location changed", Toast.LENGTH_LONG).show();
+                    }catch(NullPointerException e)
+                    {
+                        destroy();
+                    }
                 }
                 //
             }

@@ -15,7 +15,8 @@
             <param-name>services</param-name>
             <param-value>
                 com.example.pedro.myapplication.backend1.Apis.MapMarkerEndPoint,
-com.example.pedro.myapplication.backend1.Apis.UserEndPoint
+                com.example.pedro.myapplication.backend1.Apis.UserEndPoint,
+                com.example.pedro.myapplication.backend1.Apis.ChatMessageEndPoint
             </param-value>
         </init-param>
     </servlet>
