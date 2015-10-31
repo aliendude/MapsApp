@@ -36,5 +36,7 @@ public class ChatMessage {
     private String time_created;
 
     public void setCreator(User value) { created_by = Ref.create(value); }
-
+    public User getCreator(){
+        return created_by.get();
+    }
 }

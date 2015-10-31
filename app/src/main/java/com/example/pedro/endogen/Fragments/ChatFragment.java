@@ -1,6 +1,8 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -9,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,21 +26,35 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pedro.endogen.Constants;
-import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.Message;
 import com.example.pedro.endogen.MessageAdapter;
 import com.example.pedro.endogen.R;
 import com.example.pedro.endogen.SessionManager;
+import com.example.pedro.myapplication.backend1.chatmessages.Chatmessages;
+import com.example.pedro.myapplication.backend1.chatmessages.model.ChatMessage;
+import com.example.pedro.myapplication.backend1.chatmessages.model.ChatMessageCollection;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -173,22 +190,9 @@ public class ChatFragment extends Fragment {
                 attemptSend();
             }
         });
+
     }
-//
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (Activity.RESULT_OK != resultCode) {
-//            getActivity().finish();
-//            return;
-//        }
-//
-//        mUsername = data.getStringExtra("username");
-//        int numUsers = data.getIntExtra("numUsers", 1);
-//
-//        addLog(getResources().getString(R.string.message_welcome));
-//        addParticipantsLog(numUsers);
-//    }
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -262,8 +266,15 @@ public class ChatFragment extends Fragment {
         mInputMessageView.setText("");
         addMessage(mUsername, message);
 
+
+        SessionManager sessionManager = new SessionManager(getActivity().getApplicationContext());
+        String userId = sessionManager.getUserDetails().get("id");
+
         // perform the sending message attempt.
         mSocket.emit("new message", message);
+        ChatMessage mToSend = new ChatMessage().setMessage(message).setTimeCreated(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        new CreateChatMessageAsyncTask(getActivity()).execute(new Pair(userId,mToSend));
+        
     }
 
    // private void startSignIn() {
@@ -313,8 +324,9 @@ public class ChatFragment extends Fragment {
                     } catch (JSONException e) {
                         return;
                     }
-                    addLog(getResources().getString(R.string.message_welcome));
-                    addParticipantsLog(numUsers);
+                    //now that the user is logged into the chat server get the previous messages from the database
+                    new ChatMessageAsyncRetriever().execute();
+
                 }
             });
         }
@@ -442,6 +454,117 @@ public class ChatFragment extends Fragment {
     public interface OnFragmentInteractionListener {
 
         public void onFragmentInteraction(int position);
+    }
+    private Chatmessages chatMessagesService = null;
+    public class CreateChatMessageAsyncTask extends AsyncTask<Pair<String, ChatMessage>, Void, String> {
+
+        private GoogleCloudMessaging gcm;
+        private Context context;
+        public CreateChatMessageAsyncTask(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected String doInBackground(Pair<String, ChatMessage>... params) {
+            if (chatMessagesService == null) {
+                Chatmessages.Builder builder = new Chatmessages.Builder(AndroidHttp.newCompatibleTransport(),
+                        new AndroidJsonFactory(), null)
+                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
+                        // otherwise they can be skipped
+                        //.setRootUrl("http://10.0.3.2:8080/_ah/api/")
+                        .setRootUrl(Constants.APPENGINE_URL)
+                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+                            @Override
+                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
+                                    throws IOException {
+                                abstractGoogleClientRequest.setDisableGZipContent(true);
+                            }
+                        });
+                // end of optional local run code
+                chatMessagesService = builder.build();
+            }
+
+            String msg = "";
+            try {
+                if (gcm == null) {
+                    gcm = GoogleCloudMessaging.getInstance(context);
+                }
+               // msg = "You're now registered!";
+                chatMessagesService.addChatMessage(Long.parseLong(params[0].first),params[0].second).execute();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                msg = "Error: sending the message to GAE" + ex.getMessage();
+            }
+            return msg;
+        }
+
+        @Override
+        protected void onPostExecute(String msg) {
+            if(msg.length()>0)Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+            Logger.getLogger("chatMessage registered").log(Level.INFO, msg);
+        }
+
+    }
+    
+    private class ChatMessageAsyncRetriever extends AsyncTask<Void, Void, ChatMessageCollection>
+    {
+
+        public ChatMessageAsyncRetriever() {
+
+        }
+
+        @Override
+        protected ChatMessageCollection doInBackground(Void... params) {
+            if (chatMessagesService == null) {
+                Chatmessages.Builder builder = new Chatmessages.Builder(AndroidHttp.newCompatibleTransport(),
+                        new AndroidJsonFactory(), null)
+                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
+                        // otherwise they can be skipped
+                        .setRootUrl(Constants.APPENGINE_URL)
+                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+                            @Override
+                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
+                                    throws IOException {
+                                abstractGoogleClientRequest.setDisableGZipContent(true);
+                            }
+                        });
+                // end of optional local run code
+
+                chatMessagesService = builder.build();
+            }
+            try {
+                return  chatMessagesService.getChatMessages().execute();
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(ChatMessageCollection result) {
+
+            try{
+
+                for (ChatMessage element : result.getItems()) {
+                    //double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
+                    //double latitude = Double.parseDouble(element.getLocation().split(" ")[0]);
+                    // create marker
+                    //MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(latitude, longitude)).title(element.getDescription());
+                    // Changing marker icon
+                    //markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_arrow_down));
+                    // adding marker
+                   // Marker marker= googleMap.addMarker(markerOptions);
+                    addMessage(element.getCreator().getName(),element.getMessage());
+                }
+                //finally
+                addLog(getResources().getString(R.string.message_welcome));
+                addParticipantsLog(numUsers);
+            } catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
 

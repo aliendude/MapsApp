@@ -2,277 +2,277 @@
 <items version="2" >
 
     <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-b9bd98061269448cceba86442fddd7501c1a5b80.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-7a2daec484e65966e73d7f776db8e90c72c104ad.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/13.0/381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7/guava-jdk5-13.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/guava-jdk5-13.0-4bb18fd19c600b41fbd11bdded33a265bf0e0474.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/jsr305-1.3.9-d4878495bc2f23a00a65621f4215658b0276cef8.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/support-annotations-22.0.0-31e53aef9fe73d3c1406d4950ed76b166f511008.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-1189f9bba283c849ce48854edceca3935f6c46dc.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/backend1/build/libs/backend1-android-endpoints.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="57603d3e08fe354e9ca2a67bf9e1f36ed652145f">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/backend1-android-endpoints-2cd35631866c6dd7206898565d8efa5d35cc5555.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-4506339046bb199555fcf61c4c69d71f376b0b63.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/org.java-websocket/Java-WebSocket/1.3.0/db2658f013fb163de4a99274c2eb9e17efe535d2/Java-WebSocket-1.3.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="db2658f013fb163de4a99274c2eb9e17efe535d2">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/Java-WebSocket-1.3.0-0163e78e70d8849501a4c17a38d9e4f78cad6f31.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c6d79137693d494dee16372d3921f919eb724ced">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-a2ff720b002ab27dd6b301aa75b01f76df44480c.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-46e98088fb1d1182eb0750eaf1badcc041310dc7.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f7188fc9a524a8f965b5aeab74879036f0431080">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-bcd96f0d4afdf99fef4ada69182101ba939f9138.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.19.0/81dbf9795d387d5e80e55346582d5f2fb81a42eb/google-http-client-jackson2-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81dbf9795d387d5e80e55346582d5f2fb81a42eb">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-http-client-jackson2-1.19.0-2bfc3609ecbbaa548efa2f754a47e74473a2fdbe.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-85070c51f27c3030a7b3521f30f10f4b5d6ea8c8.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-9a876cde664a32caa811a1c71a990b84b80be2d2.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-8af75026ffdd2760e667c618ae9c0c641c2123be.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-1dba95838d6b324828a69e22fb346950c5e7f017.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/internal_impl-22.0.0-385ae17da14cd322bf17d75b7a01f369f05dd9f6.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.19.0/cdca49ad0977c040f603478aa2e16b2775c8fec6/google-http-client-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="cdca49ad0977c040f603478aa2e16b2775c8fec6">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-http-client-1.19.0-c31bfa287e69b07dc6ed6aba141e32dc8ff8a93c.jar" />
-    </item>
-    <item
         jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-7b49f0417c4fde227959677c60c213673dfc8fb5.jar" />
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-7b49f0417c4fde227959677c60c213673dfc8fb5.jar" />
     </item>
     <item
         jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-69ebc15e2743e89f365082ab39b3bdfee678e76b.jar" />
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-69ebc15e2743e89f365082ab39b3bdfee678e76b.jar" />
     </item>
     <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/jars/classes.jar"
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-67b8a57ec0dd52a52dc5097b6674e8e051e39f5a.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-07286d8e803b52808ac138ad6faaffe2913d153e.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.github.nkzawa/socket.io-client/0.3.0/8dfd7cf8d1124acb027b3ffd53eafcc518af3ba9/socket.io-client-0.3.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8dfd7cf8d1124acb027b3ffd53eafcc518af3ba9">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/socket.io-client-0.3.0-34cc54e9e436f7b7f651fc8fe99d6890a96c5376.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-645a19bce584205ebd3146a4c41fc5daa39a642c.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-93a3a6e418c270d87e899f2a4bf5e983033e8d1d.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.19.0/ba2aafb867f6af469f936ae76426cf0a280094bd/google-api-client-android-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ba2aafb867f6af469f936ae76426cf0a280094bd">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-api-client-android-1.19.0-9e21c62140cdb48a4a20306900b8c64f1621c615.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.19.0/6a21277d9bebe267b7ddee028b241eebc756c040/google-api-client-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6a21277d9bebe267b7ddee028b241eebc756c040">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-api-client-1.19.0-65e190ab1e83fa9dbb44f18c51639dad9cd00841.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.github.nkzawa/engine.io-client/0.3.1/3ca9d0d53a27ecb88538ed874be417cfa827db5d/engine.io-client-0.3.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3ca9d0d53a27ecb88538ed874be417cfa827db5d">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/engine.io-client-0.3.1-2493da066394585cd65e88236ca35f99b00267fe.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/bolts-android-1.1.4-0996cf4ab20933f29cee310466da341f984840e3.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-d098f9871c8d17fc0cc0861c1bc80b8249303f45.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/jackson-core-2.1.3-d71e575c0d3e979f61da3cdab11040d4a857f85a.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-968858d1c3f68f2759f9f2ad6237ac467755b2c2.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.19.0/e3f11020c2c812112803d252d1392872d3f619c8/google-http-client-android-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3f11020c2c812112803d252d1392872d3f619c8">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-http-client-android-1.19.0-f70eb687a47d801b69ad4287330e339aee32d36e.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-c8c7f251831c7208e21552d33c98a24a3cb0e73b.jar" />
-    </item>
-    <item
-        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.19.0/d473a8962e14a707a3716637e4898bb2dd9643f2/google-oauth-client-1.19.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d473a8962e14a707a3716637e4898bb2dd9643f2">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/google-oauth-client-1.19.0-2eed5b2ff5ed200f91309844de6631604eceb2a0.jar" />
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-385ae17da14cd322bf17d75b7a01f369f05dd9f6.jar" />
     </item>
     <item
         jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-54e662d82d748445b0cd7efe0b6ba350bc08cc9d.jar" />
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-54e662d82d748445b0cd7efe0b6ba350bc08cc9d.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.github.nkzawa/engine.io-client/0.3.1/3ca9d0d53a27ecb88538ed874be417cfa827db5d/engine.io-client-0.3.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3ca9d0d53a27ecb88538ed874be417cfa827db5d">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/engine.io-client-0.3.1-2493da066394585cd65e88236ca35f99b00267fe.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-93a3a6e418c270d87e899f2a4bf5e983033e8d1d.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.19.0/d473a8962e14a707a3716637e4898bb2dd9643f2/google-oauth-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d473a8962e14a707a3716637e4898bb2dd9643f2">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-oauth-client-1.19.0-2eed5b2ff5ed200f91309844de6631604eceb2a0.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.github.nkzawa/socket.io-client/0.3.0/8dfd7cf8d1124acb027b3ffd53eafcc518af3ba9/socket.io-client-0.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8dfd7cf8d1124acb027b3ffd53eafcc518af3ba9">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/socket.io-client-0.3.0-34cc54e9e436f7b7f651fc8fe99d6890a96c5376.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.19.0/ba2aafb867f6af469f936ae76426cf0a280094bd/google-api-client-android-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba2aafb867f6af469f936ae76426cf0a280094bd">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-api-client-android-1.19.0-9e21c62140cdb48a4a20306900b8c64f1621c615.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.19.0/6a21277d9bebe267b7ddee028b241eebc756c040/google-api-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6a21277d9bebe267b7ddee028b241eebc756c040">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-api-client-1.19.0-65e190ab1e83fa9dbb44f18c51639dad9cd00841.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-1dba95838d6b324828a69e22fb346950c5e7f017.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-07286d8e803b52808ac138ad6faaffe2913d153e.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-645a19bce584205ebd3146a4c41fc5daa39a642c.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-968858d1c3f68f2759f9f2ad6237ac467755b2c2.jar" />
     </item>
     <item
         jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-a41f87b723b1940c87ef10cfea4bac94f37f4214.jar" />
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-a41f87b723b1940c87ef10cfea4bac94f37f4214.jar" />
     </item>
     <item
         jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/release/classes-9c090cf86c7d34b45d0f473502809519561af29a.jar" />
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-9c090cf86c7d34b45d0f473502809519561af29a.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/jackson-core-2.1.3-d71e575c0d3e979f61da3cdab11040d4a857f85a.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-c8c7f251831c7208e21552d33c98a24a3cb0e73b.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-0996cf4ab20933f29cee310466da341f984840e3.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-31e53aef9fe73d3c1406d4950ed76b166f511008.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-d098f9871c8d17fc0cc0861c1bc80b8249303f45.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-7a2daec484e65966e73d7f776db8e90c72c104ad.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-a2ff720b002ab27dd6b301aa75b01f76df44480c.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.19.0/e3f11020c2c812112803d252d1392872d3f619c8/google-http-client-android-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3f11020c2c812112803d252d1392872d3f619c8">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-http-client-android-1.19.0-f70eb687a47d801b69ad4287330e339aee32d36e.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-1189f9bba283c849ce48854edceca3935f6c46dc.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/13.0/381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7/guava-jdk5-13.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/guava-jdk5-13.0-4bb18fd19c600b41fbd11bdded33a265bf0e0474.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-b9bd98061269448cceba86442fddd7501c1a5b80.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/jsr305-1.3.9-d4878495bc2f23a00a65621f4215658b0276cef8.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-46e98088fb1d1182eb0750eaf1badcc041310dc7.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f7188fc9a524a8f965b5aeab74879036f0431080">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-bcd96f0d4afdf99fef4ada69182101ba939f9138.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/backend1/build/libs/backend1-android-endpoints.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b6813caf70c481d0cbb6e33efbe5bae5c3df60a0">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/backend1-android-endpoints-2cd35631866c6dd7206898565d8efa5d35cc5555.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-85070c51f27c3030a7b3521f30f10f4b5d6ea8c8.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-4506339046bb199555fcf61c4c69d71f376b0b63.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-9a876cde664a32caa811a1c71a990b84b80be2d2.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.19.0/81dbf9795d387d5e80e55346582d5f2fb81a42eb/google-http-client-jackson2-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81dbf9795d387d5e80e55346582d5f2fb81a42eb">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-http-client-jackson2-1.19.0-2bfc3609ecbbaa548efa2f754a47e74473a2fdbe.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.19.0/cdca49ad0977c040f603478aa2e16b2775c8fec6/google-http-client-1.19.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="cdca49ad0977c040f603478aa2e16b2775c8fec6">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/google-http-client-1.19.0-c31bfa287e69b07dc6ed6aba141e32dc8ff8a93c.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-8af75026ffdd2760e667c618ae9c0c641c2123be.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/.gradle/caches/modules-2/files-2.1/org.java-websocket/Java-WebSocket/1.3.0/db2658f013fb163de4a99274c2eb9e17efe535d2/Java-WebSocket-1.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="db2658f013fb163de4a99274c2eb9e17efe535d2">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/Java-WebSocket-1.3.0-0163e78e70d8849501a4c17a38d9e4f78cad6f31.jar" />
+    </item>
+    <item
+        jar="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/Users/macbookpro/Desktop/MapsApp/app/build/intermediates/pre-dexed/debug/classes-67b8a57ec0dd52a52dc5097b6674e8e051e39f5a.jar" />
     </item>
 
 </items>
