@@ -33,6 +33,7 @@ public class ChatMessage {
 
     private String message;
 
+    @Index
     private String time_created;
 
     public void setCreator(User value) { created_by = Ref.create(value); }

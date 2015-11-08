@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values-large/dimens.xml -->
+    <!-- From: file:/Users/macbookpro/Desktop/MapsApp/app/src/main/res/values-large/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">8dp</dimen>
     <dimen name="activity_vertical_margin">8dp</dimen>
     <dimen name="spacing">4dp</dimen>
-    <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values-large/refs.xml -->
+    <!-- From: file:/Users/macbookpro/Desktop/MapsApp/app/src/main/res/values-large/refs.xml -->
     <eat-comment/>
     <item name="fragment_createdmarkers" type="layout">@layout/fragment_createdmarkers_grid</item>
-    <!-- From: file:/Users/mac/Desktop/MapsApp/app/src/main/res/values-large/styles.xml -->
+    <!-- From: file:/Users/macbookpro/Desktop/MapsApp/app/src/main/res/values-large/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="actionBarStyle">@style/MyActionBar</item>

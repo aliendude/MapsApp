@@ -32,7 +32,7 @@ public class ChatMessageEndPoint {
     @ApiMethod(name = "getChatMessages")
     public List<ChatMessage> getChatMessages()
     {
-        return ofy().load().type(ChatMessage.class).list();
+        return ofy().load().type(ChatMessage.class).order("time_created").list();
     }
 
 }

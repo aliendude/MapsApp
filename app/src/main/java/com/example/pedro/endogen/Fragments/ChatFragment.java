@@ -1,11 +1,16 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -26,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pedro.endogen.Constants;
+import com.example.pedro.endogen.LoggedUserActivity;
 import com.example.pedro.endogen.Message;
 import com.example.pedro.endogen.MessageAdapter;
 import com.example.pedro.endogen.R;
@@ -75,6 +81,7 @@ public class ChatFragment extends Fragment {
     private String mUsername;
     private Socket mSocket;
     private int numUsers;
+
     {
         try {
             mSocket = IO.socket(Constants.CHAT_SERVER_URL);
@@ -92,7 +99,6 @@ public class ChatFragment extends Fragment {
         super.onAttach(activity);
         mAdapter = new MessageAdapter(activity, mMessages);
     }
-
 
 
     @Override
@@ -130,7 +136,8 @@ public class ChatFragment extends Fragment {
         mSocket.disconnect();
         destroy();
     }
-    public void destroy(){
+
+    public void destroy() {
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
         mSocket.off("new message", onNewMessage);
@@ -140,6 +147,7 @@ public class ChatFragment extends Fragment {
         mSocket.off("stop typing", onStopTyping);
         mSocket.off("login", onLogin);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -227,9 +235,9 @@ public class ChatFragment extends Fragment {
         addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
     }
 
-    private void addMessage(String username, String message) {
+    private void addMessage(String username, String message, String timeCreated) {
         mMessages.add(new Message.Builder(Message.TYPE_MESSAGE)
-                .username(username).message(message).build());
+                .username(username).message(message).timecreated(timeCreated).build());
         mAdapter.notifyItemInserted(mMessages.size() - 1);
         scrollToBottom();
     }
@@ -262,9 +270,9 @@ public class ChatFragment extends Fragment {
             mInputMessageView.requestFocus();
             return;
         }
-
+        String currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         mInputMessageView.setText("");
-        addMessage(mUsername, message);
+        addMessage(mUsername, message, currentDate);
 
 
         SessionManager sessionManager = new SessionManager(getActivity().getApplicationContext());
@@ -272,16 +280,16 @@ public class ChatFragment extends Fragment {
 
         // perform the sending message attempt.
         mSocket.emit("new message", message);
-        ChatMessage mToSend = new ChatMessage().setMessage(message).setTimeCreated(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        new CreateChatMessageAsyncTask(getActivity()).execute(new Pair(userId,mToSend));
-        
+        ChatMessage mToSend = new ChatMessage().setMessage(message).setTimeCreated(currentDate);
+        new CreateChatMessageAsyncTask(getActivity()).execute(new Pair(userId, mToSend));
+
     }
 
-   // private void startSignIn() {
-   //     mUsername = null;
-   //     Intent intent = new Intent(getActivity(), ChatLoginActivity.class);
-   //     startActivityForResult(intent, REQUEST_LOGIN);
-   // }
+    // private void startSignIn() {
+    //     mUsername = null;
+    //     Intent intent = new Intent(getActivity(), ChatLoginActivity.class);
+    //     startActivityForResult(intent, REQUEST_LOGIN);
+    // }
 
     private void leave() {
         mUsername = null;
@@ -293,7 +301,8 @@ public class ChatFragment extends Fragment {
     private void scrollToBottom() {
         try {
             mMessagesView.scrollToPosition(mAdapter.getItemCount() - 1);
-        }catch(Exception e){}
+        } catch (Exception e) {
+        }
     }
 
     private Emitter.Listener onConnectError = new Emitter.Listener() {
@@ -303,9 +312,9 @@ public class ChatFragment extends Fragment {
                 @Override
                 public void run() {
                     try {
-                        Toast.makeText(getActivity().getApplicationContext(),R.string.error_connect, Toast.LENGTH_LONG).show();
-                    }catch(Exception e)
-                    {}
+                        Toast.makeText(getActivity().getApplicationContext(), R.string.error_connect, Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                    }
                 }
             });
         }
@@ -349,7 +358,22 @@ public class ChatFragment extends Fragment {
                     }
 
                     removeTyping(username);
-                    addMessage(username, message);
+
+                    addMessage(username, message, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+
+
+                    NotificationCompat.Builder mBuilder =
+                            new NotificationCompat.Builder(getActivity())
+                                    .setSmallIcon(R.drawable.ic_action_chat)
+                                    .setContentTitle("New message")
+                                    .setContentText(username+" says: "+message);
+
+                    NotificationManager mNotificationManager =
+                            (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+// mId allows you to update the notification later on.
+                    int mId=0;
+                    mNotificationManager.notify(mId, mBuilder.build());
+
                 }
             });
         }
@@ -455,11 +479,14 @@ public class ChatFragment extends Fragment {
 
         public void onFragmentInteraction(int position);
     }
+
     private Chatmessages chatMessagesService = null;
+
     public class CreateChatMessageAsyncTask extends AsyncTask<Pair<String, ChatMessage>, Void, String> {
 
         private GoogleCloudMessaging gcm;
         private Context context;
+
         public CreateChatMessageAsyncTask(Context context) {
             this.context = context;
         }
@@ -489,8 +516,8 @@ public class ChatFragment extends Fragment {
                 if (gcm == null) {
                     gcm = GoogleCloudMessaging.getInstance(context);
                 }
-               // msg = "You're now registered!";
-                chatMessagesService.addChatMessage(Long.parseLong(params[0].first),params[0].second).execute();
+                // msg = "You're now registered!";
+                chatMessagesService.addChatMessage(Long.parseLong(params[0].first), params[0].second).execute();
 
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -501,14 +528,13 @@ public class ChatFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String msg) {
-            if(msg.length()>0)Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+            if (msg.length() > 0) Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             Logger.getLogger("chatMessage registered").log(Level.INFO, msg);
         }
 
     }
-    
-    private class ChatMessageAsyncRetriever extends AsyncTask<Void, Void, ChatMessageCollection>
-    {
+
+    private class ChatMessageAsyncRetriever extends AsyncTask<Void, Void, ChatMessageCollection> {
 
         public ChatMessageAsyncRetriever() {
 
@@ -534,7 +560,7 @@ public class ChatFragment extends Fragment {
                 chatMessagesService = builder.build();
             }
             try {
-                return  chatMessagesService.getChatMessages().execute();
+                return chatMessagesService.getChatMessages().execute();
             } catch (IOException e) {
                 return null;
             }
@@ -543,7 +569,7 @@ public class ChatFragment extends Fragment {
         @Override
         protected void onPostExecute(ChatMessageCollection result) {
 
-            try{
+            try {
 
                 for (ChatMessage element : result.getItems()) {
                     //double longitude = Double.parseDouble(element.getLocation().split(" ")[1]);
@@ -553,16 +579,16 @@ public class ChatFragment extends Fragment {
                     // Changing marker icon
                     //markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_arrow_down));
                     // adding marker
-                   // Marker marker= googleMap.addMarker(markerOptions);
-                    addMessage(element.getCreator().getName(),element.getMessage());
+                    // Marker marker= googleMap.addMarker(markerOptions);
+                    addMessage(element.getCreator().getName(), element.getMessage(), element.getTimeCreated());
                 }
-                //finally
-                addLog(getResources().getString(R.string.message_welcome));
-                addParticipantsLog(numUsers);
-            } catch(Exception e)
-            {
+                ;
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+            //finally
+            addLog(getResources().getString(R.string.message_welcome));
+            addParticipantsLog(numUsers);
 
         }
     }

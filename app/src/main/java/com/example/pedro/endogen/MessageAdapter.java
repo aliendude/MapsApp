@@ -45,6 +45,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         Message message = mMessages.get(position);
         viewHolder.setMessage(message.getMessage());
         viewHolder.setUsername(message.getUsername());
+        viewHolder.setTimeCreated(message.getmTimeCreated());
     }
 
     @Override
@@ -60,12 +61,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mUsernameView;
         private TextView mMessageView;
-
+        private TextView mTimeCreatedView;
         public ViewHolder(View itemView) {
             super(itemView);
 
             mUsernameView = (TextView) itemView.findViewById(R.id.username);
             mMessageView = (TextView) itemView.findViewById(R.id.message);
+            mTimeCreatedView = (TextView) itemView.findViewById(R.id.timecreated);
         }
 
         public void setUsername(String username) {
@@ -78,7 +80,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             if (null == mMessageView) return;
             mMessageView.setText(message);
         }
-
+        public void setTimeCreated(String timecreated)
+        {
+            if(null== mTimeCreatedView) return;
+            mTimeCreatedView.setText(timecreated);
+        }
         private int getUsernameColor(String username) {
             int hash = 7;
             for (int i = 0, len = username.length(); i < len; i++) {

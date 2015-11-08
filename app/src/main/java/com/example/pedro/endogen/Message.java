@@ -9,6 +9,7 @@ public class Message {
     private int mType;
     private String mMessage;
     private String mUsername;
+    private String mTimeCreated;
 
     private Message() {}
 
@@ -16,6 +17,13 @@ public class Message {
         return mType;
     };
 
+    public String getmTimeCreated() {
+        return mTimeCreated;
+    }
+
+    public void setmTimeCreated(String mTimeCreated) {
+        this.mTimeCreated = mTimeCreated;
+    }
     public String getMessage() {
         return mMessage;
     };
@@ -29,6 +37,7 @@ public class Message {
         private final int mType;
         private String mUsername;
         private String mMessage;
+        private String mTimeCreated;
 
         public Builder(int type) {
             mType = type;
@@ -43,12 +52,16 @@ public class Message {
             mMessage = message;
             return this;
         }
-
+        public Builder timecreated(String timecreated){
+            mTimeCreated = timecreated;
+            return this;
+        }
         public Message build() {
             Message message = new Message();
             message.mType = mType;
             message.mUsername = mUsername;
             message.mMessage = mMessage;
+            message.mTimeCreated= mTimeCreated;
             return message;
         }
     }
