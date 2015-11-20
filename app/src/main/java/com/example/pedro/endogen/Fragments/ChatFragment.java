@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pedro.endogen.Constants;
+import com.example.pedro.endogen.Globals;
 import com.example.pedro.endogen.LoggedUserActivity;
 import com.example.pedro.endogen.Message;
 import com.example.pedro.endogen.MessageAdapter;
@@ -360,20 +361,24 @@ public class ChatFragment extends Fragment {
                     removeTyping(username);
 
                     addMessage(username, message, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+                    //only add a notification id the app is stopped
+                    if(Globals.isStopped) {
+                        Intent intent = new Intent(getActivity(), LoggedUserActivity.class);
+                        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        NotificationCompat.Builder mBuilder =
+                                new NotificationCompat.Builder(getActivity())
+                                        .setSmallIcon(R.mipmap.ic_launcher)
+                                        .setContentTitle("New message")
+                                        .setContentText(username + " says: " + message)
+                                        .setContentIntent(pendingIntent)
+                                        .setAutoCancel(true);
 
-
-                    NotificationCompat.Builder mBuilder =
-                            new NotificationCompat.Builder(getActivity())
-                                    .setSmallIcon(R.drawable.ic_action_chat)
-                                    .setContentTitle("New message")
-                                    .setContentText(username+" says: "+message);
-
-                    NotificationManager mNotificationManager =
-                            (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+                        NotificationManager mNotificationManager =
+                                (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 // mId allows you to update the notification later on.
-                    int mId=0;
-                    mNotificationManager.notify(mId, mBuilder.build());
-
+                        int mId = 0;
+                        mNotificationManager.notify(mId, mBuilder.build());
+                    }
                 }
             });
         }

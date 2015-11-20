@@ -66,7 +66,9 @@
         </activity>
         <activity
             android:name=".LoggedUserActivity"
-            android:label="@string/title_activity_logged_user" >
+            android:label="@string/title_activity_logged_user"
+            android:launchMode="singleTop"
+            >
         </activity>
     </application>
 

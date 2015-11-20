@@ -236,13 +236,13 @@ public class LoggedUserActivity extends ActionBarActivity implements
     @Override
     public void onFragmentInteraction(int position) {
         //falta implementar
-        Log.e("pedro","fragment interaction");
+        Log.e("pedro", "fragment interaction");
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
         //falta implementar
-        Log.e("pedro","fragment interaction");
+        Log.e("pedro", "fragment interaction");
     }
 
     @Override
@@ -302,6 +302,23 @@ public class LoggedUserActivity extends ActionBarActivity implements
             mDrawerLayout.closeDrawer(mDrawerList);
         }
 
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Globals.isStopped=false;
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        // Activity being restarted from stopped state
+        Globals.isStopped=false;
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();  // Always call the superclass method first
+        Globals.isStopped=true;
 
     }
 
