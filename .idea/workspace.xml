@@ -27,6 +27,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment$9$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment$9$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/ChatFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/MapFragment1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/MapFragment1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/MapFragment1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/pedro/endogen/Fragments/MapFragment1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
@@ -36,11 +38,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/ChatFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/ChatFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Globals.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Globals.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/LoggedUserActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/LoggedUserActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -78,57 +76,44 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
-                <element signature="e#897#898#0" expanded="true" />
-                <element signature="e#936#937#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapMarker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend1/src/main/java/com/example/pedro/myapplication/backend1/Model/MapMarker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-              <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#744#745#0" expanded="false" />
-                <element signature="e#779#780#0" expanded="false" />
-                <element signature="e#823#824#0" expanded="false" />
-                <element signature="e#863#864#0" expanded="false" />
-                <element signature="e#899#900#0" expanded="false" />
-                <element signature="e#935#936#0" expanded="false" />
-                <element signature="e#981#982#0" expanded="false" />
-                <element signature="e#1023#1024#0" expanded="false" />
-                <element signature="e#1057#1058#0" expanded="false" />
-                <element signature="e#1091#1092#0" expanded="false" />
-                <element signature="e#1133#1134#0" expanded="false" />
-                <element signature="e#1171#1172#0" expanded="false" />
-                <element signature="e#1210#1211#0" expanded="false" />
-                <element signature="e#1249#1250#0" expanded="false" />
-                <element signature="e#1301#1302#0" expanded="false" />
-                <element signature="e#1349#1350#0" expanded="false" />
-                <element signature="e#1393#1394#0" expanded="false" />
-                <element signature="e#1437#1438#0" expanded="false" />
-                <element signature="e#1503#1504#0" expanded="false" />
-                <element signature="e#1561#1562#0" expanded="false" />
-                <element signature="e#1603#1604#0" expanded="false" />
-                <element signature="e#1645#1646#0" expanded="false" />
-                <element signature="e#1703#1704#0" expanded="false" />
-                <element signature="e#1757#1758#0" expanded="false" />
+                <element signature="e#425#426#0" expanded="false" />
+                <element signature="e#455#456#0" expanded="false" />
+                <element signature="e#501#502#0" expanded="false" />
+                <element signature="e#539#540#0" expanded="false" />
+                <element signature="e#578#579#0" expanded="false" />
+                <element signature="e#613#614#0" expanded="false" />
+                <element signature="e#669#670#0" expanded="false" />
+                <element signature="e#717#718#0" expanded="false" />
+                <element signature="e#897#898#0" expanded="false" />
+                <element signature="e#936#937#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapFragment1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MapFragment1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="187" column="84" selection-start-line="183" selection-start-column="17" selection-end-line="187" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.43866944">
+              <caret line="1363" column="66" selection-start-line="1363" selection-start-column="66" selection-end-line="1363" selection-end-column="66" />
               <folding>
                 <element signature="method#addManitouSpringsLocation#0;class#MapFragment1#0" expanded="false" />
+                <element signature="e#60385#63516#0" expanded="true" />
+                <element signature="e#60518#63497#0" expanded="true" />
+                <element signature="e#63496#63497#0" expanded="true" />
+                <element signature="e#63515#63516#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,7 +123,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#991#992#0" expanded="false" />
+                <element signature="e#1040#1041#0" expanded="false" />
+                <element signature="e#1173#1174#0" expanded="false" />
+                <element signature="e#1237#1238#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,7 +139,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,26 +151,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="380" column="21" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
-              <folding>
-                <element signature="e#11849#13887#0" expanded="true" />
-                <element signature="e#13886#13887#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoggedUserActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoggedUserActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/LoggedUserActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7986577">
+            <state vertical-scroll-proportion="0.0">
               <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
-              <folding>
-                <element signature="e#2666#2686#0" expanded="true" />
-                <element signature="e#2740#2761#0" expanded="true" />
-                <element signature="e#4495#4518#0" expanded="true" />
-                <element signature="e#4687#4705#0" expanded="true" />
-                <element signature="e#4874#4887#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2619,7 +2603,6 @@
         <option value="$PROJECT_DIR$/backend1/src/main/java/com/example/pedro/myapplication/backend1/Model/MapMarker.java" />
         <option value="$PROJECT_DIR$/backend1/src/main/java/com/example/pedro/myapplication/backend1/OfyService.java" />
         <option value="$PROJECT_DIR$/backend1/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Message.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/chat_item_message.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/MessageAdapter.java" />
@@ -2631,6 +2614,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/ChatFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/LoggedUserActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java" />
       </list>
     </option>
   </component>
@@ -2671,9 +2655,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2926,6 +2909,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -2935,7 +2919,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend1/src/main/webapp/WEB-INF/web.xml" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="CB5123C675" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.101:5555" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.Flavors" value="" />
@@ -3225,7 +3209,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447013664025</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Message notifications improved">
+      <created>1447981082343</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1447981082343</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3238,14 +3228,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32719547" sideWeight="0.49353796" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27903682" sideWeight="0.49353796" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
@@ -3260,7 +3250,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29886913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32719547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3292,7 +3282,8 @@
     <MESSAGE value="ChatMessage entity created to persist chat messages" />
     <MESSAGE value="ChatMessages are now persisted and showed to the user in the chat tab" />
     <MESSAGE value="The chat fragment now shows previous messages and when the user receives a message gets a basic notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="The chat fragment now shows previous messages and when the user receives a message gets a basic notification" />
+    <MESSAGE value="Message notifications improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Message notifications improved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3301,18 +3292,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Data/MapMarkerAsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend1/src/main/java/com/example/pedro/myapplication/backend1/OfyService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3320,7 +3303,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1040#1041#0" expanded="false" />
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1237#1238#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3328,7 +3317,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3336,10 +3327,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="226" column="12" selection-start-line="226" selection-start-column="12" selection-end-line="226" selection-end-column="12" />
-          <folding>
-            <element signature="e#11849#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3392,6 +3380,10 @@
           <caret line="1490" column="43" selection-start-line="1490" selection-start-column="43" selection-end-line="1490" selection-end-column="43" />
           <folding>
             <element signature="method#addManitouSpringsLocation#0;class#MapFragment1#0" expanded="false" />
+            <element signature="e#60385#63516#0" expanded="true" />
+            <element signature="e#60518#63497#0" expanded="true" />
+            <element signature="e#63496#63497#0" expanded="true" />
+            <element signature="e#63515#63516#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3414,10 +3406,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="362" column="27" selection-start-line="362" selection-start-column="27" selection-end-line="362" selection-end-column="27" />
-          <folding>
-            <element signature="e#11849#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3448,6 +3437,10 @@
           <caret line="1490" column="43" selection-start-line="1490" selection-start-column="43" selection-end-line="1490" selection-end-column="43" />
           <folding>
             <element signature="method#addManitouSpringsLocation#0;class#MapFragment1#0" expanded="false" />
+            <element signature="e#60385#63516#0" expanded="true" />
+            <element signature="e#60518#63497#0" expanded="true" />
+            <element signature="e#63496#63497#0" expanded="true" />
+            <element signature="e#63515#63516#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3470,10 +3463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#11849#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3516,7 +3506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3566,7 +3555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3577,7 +3565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3585,7 +3572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3593,7 +3579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3604,25 +3589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#670#671#0" expanded="false" />
-            <element signature="e#701#702#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#820#821#0" expanded="false" />
-            <element signature="e#847#848#0" expanded="false" />
-            <element signature="e#887#888#0" expanded="false" />
-            <element signature="e#919#920#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#979#980#0" expanded="false" />
-            <element signature="e#1021#1022#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3645,41 +3611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#744#745#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#823#824#0" expanded="false" />
-            <element signature="e#863#864#0" expanded="false" />
-            <element signature="e#899#900#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1057#1058#0" expanded="false" />
-            <element signature="e#1091#1092#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1171#1172#0" expanded="false" />
-            <element signature="e#1210#1211#0" expanded="false" />
-            <element signature="e#1249#1250#0" expanded="false" />
-            <element signature="e#1301#1302#0" expanded="false" />
-            <element signature="e#1349#1350#0" expanded="false" />
-            <element signature="e#1393#1394#0" expanded="false" />
-            <element signature="e#1437#1438#0" expanded="false" />
-            <element signature="e#1503#1504#0" expanded="false" />
-            <element signature="e#1561#1562#0" expanded="false" />
-            <element signature="e#1603#1604#0" expanded="false" />
-            <element signature="e#1645#1646#0" expanded="false" />
-            <element signature="e#1703#1704#0" expanded="false" />
-            <element signature="e#1757#1758#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3688,18 +3619,17 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="84" selection-start-line="183" selection-start-column="17" selection-end-line="187" selection-end-column="84" />
-          <folding>
-            <element signature="method#addManitouSpringsLocation#0;class#MapFragment1#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#539#540#0" expanded="false" />
+            <element signature="e#578#579#0" expanded="false" />
+            <element signature="e#613#614#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
+            <element signature="e#717#718#0" expanded="false" />
+            <element signature="e#897#898#0" expanded="false" />
+            <element signature="e#936#937#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3708,7 +3638,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3716,7 +3648,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1040#1041#0" expanded="false" />
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1237#1238#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3725,17 +3663,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/ChatFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="380" column="21" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
-          <folding>
-            <element signature="e#11849#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3749,14 +3676,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/LoggedUserActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7986577">
+        <state vertical-scroll-proportion="0.0">
           <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/ChatFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="380" column="21" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/pedro/endogen/Fragments/MapFragment1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43866944">
+          <caret line="1363" column="66" selection-start-line="1363" selection-start-column="66" selection-end-line="1363" selection-end-column="66" />
           <folding>
-            <element signature="e#2666#2686#0" expanded="true" />
-            <element signature="e#2740#2761#0" expanded="true" />
-            <element signature="e#4495#4518#0" expanded="true" />
-            <element signature="e#4687#4705#0" expanded="true" />
-            <element signature="e#4874#4887#0" expanded="true" />
+            <element signature="method#addManitouSpringsLocation#0;class#MapFragment1#0" expanded="false" />
+            <element signature="e#60385#63516#0" expanded="true" />
+            <element signature="e#60518#63497#0" expanded="true" />
+            <element signature="e#63496#63497#0" expanded="true" />
+            <element signature="e#63515#63516#0" expanded="true" />
           </folding>
         </state>
       </provider>

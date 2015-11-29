@@ -53,6 +53,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -103,7 +104,6 @@ public class MapFragment1 extends Fragment{
 
         mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
-        mSocket.on("new message", onNewMessage);
         mSocket.on("user joined", onUserJoined);
         mSocket.on("location changed", onLocationChanged);
         mSocket.on("user left", onUserLeft);
@@ -124,7 +124,7 @@ public class MapFragment1 extends Fragment{
         mSocket.disconnect();
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.off(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
-        mSocket.off("new mesage", onNewMessage);
+
         mSocket.off("location changed", onLocationChanged);
         mSocket.off("user joined", onUserJoined);
         mSocket.off("user left", onUserLeft);
@@ -1249,7 +1249,6 @@ public class MapFragment1 extends Fragment{
             googleMap.animateCamera(CameraUpdateFactory
                     .newCameraPosition(cameraPosition));
         }
-
     }
 
 
@@ -1356,6 +1355,44 @@ public class MapFragment1 extends Fragment{
                     JSONObject data = (JSONObject) args[0];
                     try {
                         numUsers = data.getInt("numUsers");
+                        String userlist = data.getString("userlist");
+
+                        for(String pair :userlist.split("!")){
+                            String username =pair.split("/")[0];
+                            String location =pair.split("/")[1];
+                            String latitude= location.split(",")[1];
+                            String longitude=location.split(",")[0];
+                            //Log.e("pedro username: ",username);
+                            //Log.e("pedro location: ",location);
+                            if(!mUsername.trim().equals(username.trim()))
+                            {
+                                if(usersMarkersMap.containsKey(username)){
+                                    //just in case the id is already in the server
+                                    Marker usermarker=usersMarkersMap.get(username);
+                                    usermarker.remove();
+                                    usersMarkersMap.remove(username);
+
+                                    MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                                    Marker marker= googleMap.addMarker(markerOptions);
+                                    usersMarkersMap.put(username,marker);
+                                    //usersMarkersMap.(username)
+                                }else{
+                                    // create marker
+                                    MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(Double.parseDouble(latitude),Double.parseDouble( longitude))).title(username);
+                                    // Changing marker icon
+                                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fa_user));
+                                    // adding marker
+                                    Log.e("pedro","marker added");
+                                    Log.e("lat",latitude);
+                                    Log.e("lon",longitude);
+                                    Marker marker= googleMap.addMarker(markerOptions);
+                                    usersMarkersMap.put(username,marker);
+                                }
+                            }
+                        }
+
+
 
                     } catch (JSONException e) {
                         return;
@@ -1366,26 +1403,6 @@ public class MapFragment1 extends Fragment{
             });
         }
 
-    };
-    private Emitter.Listener onNewMessage = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    String message;
-                    try {
-                        username = data.getString("username");
-                        message = data.getString("message");
-                    } catch (JSONException e) {
-                        return;
-                    }
-                    // addMessage(username, message);
-                }
-            });
-        }
     };
 
     private Emitter.Listener onUserJoined = new Emitter.Listener() {
