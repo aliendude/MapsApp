@@ -1,6 +1,8 @@
 package com.example.pedro.endogen.Fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
@@ -19,6 +21,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pedro.endogen.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -61,14 +64,38 @@ public class SelectMapFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
+    }
     private void getLocation() {
         // Get the location manager
         LocationManager locationManager = (LocationManager)
                 getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+        if ( !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+            //Log.e("pedro","si");
+            buildAlertMessageNoGps();
+        }
+        else{
+            //Log.e("pedro","no");
+        }
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, false);
-        Location location = locationManager.getLastKnownLocation(bestProvider);
+        Location location;
+
         LocationListener loc_listener = new LocationListener() {
 
             public void onLocationChanged(Location l) {}
@@ -165,18 +192,35 @@ public class SelectMapFragment extends Fragment {
                     ll.addView(myButton, lp);
                 }
             });
+            Button buttonGoToMyLocationPressed = (Button) view.findViewById(R.id.button_go_to_my_location);
+            buttonGoToMyLocationPressed.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    onGoToMyLocationPressed(v);
+                }
+            });
 
         } catch (InflateException e) {
 
         }
         return view;
     }
+    public void onGoToMyLocationPressed(View view) {
+        getLocation();
+        if(mLatitude==-1.0&&mLongitude==-1.0)
+        {
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            Toast.makeText(getActivity().getApplicationContext(), "Location not ready", Toast.LENGTH_LONG).show();
+        }
+        else{
+
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(new LatLng(mLatitude,mLongitude)).zoom(16).build();
+            googleMap.animateCamera(CameraUpdateFactory
+                    .newCameraPosition(cameraPosition));
         }
     }
+
 
     @Override
     public void onAttach(Activity activity) {
